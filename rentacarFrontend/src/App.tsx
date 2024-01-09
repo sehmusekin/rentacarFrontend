@@ -1,5 +1,12 @@
+import Navbar from "./layouts/Navbar";
+
+
+
 function App() {
-  return <div className="bg-red-700">RentACar</div>;
+  return <div className="App" >
+    
+    <Navbar/>
+  </div>;
 }
 
 export default App;
