@@ -1,12 +1,12 @@
+import Homepage from "./layouts/Homepage";
 import Navbar from "./layouts/Navbar";
 
-
-
 function App() {
-  return <div className="App" >
-    
-    <Navbar/>
-  </div>;
+  return (
+    <div className="App">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;
