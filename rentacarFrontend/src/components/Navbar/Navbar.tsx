@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -62,24 +64,24 @@ const Navbar = () => {
                   >
                     Anasayfa
                   </a>
-                  <a
-                    href="#"
+                  <Link
+                    to="/cars"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
                     Araçlarımız
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/locations"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
                     Şubelerimiz
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/review"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
-                    Yurtdışı Kiralama
-                  </a>
+                    Görüşler
+                  </Link>
                 </div>
               </div>
             </div>
@@ -191,7 +193,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      ;
     </div>
   );
 };
