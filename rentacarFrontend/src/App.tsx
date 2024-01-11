@@ -1,6 +1,8 @@
-import { Route, Routes, RouteProps } from "react-router-dom";
-import BrandList from "./pages/BrandList";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Homepage from "./pages/Homepage/Homepage";
+import CarDetail from "./pages/CarDetail/CarDetail";
+
 
 function App() {
   return (
@@ -8,9 +10,8 @@ function App() {
       <>
         <Navbar />
         <Routes>
-          <Route path="/" element={<BrandList />} />
-
-          <Route path="/brands" element={<BrandList />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/car/:id" element={<CarDetail />} />
         </Routes>
       </>
     </div>
