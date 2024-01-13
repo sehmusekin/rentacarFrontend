@@ -193,10 +193,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-<<<<<<< HEAD
-      
-=======
->>>>>>> 184d8930b81a40c3ec393041ac44ec46f6f2db97
     </div>
   );
 };
