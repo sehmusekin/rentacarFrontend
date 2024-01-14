@@ -23,7 +23,7 @@ function Cars() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center gap-10 mt-10">
       {cars.map((car) => (
         <CarShow key={car.id} data={car} />
       ))}
