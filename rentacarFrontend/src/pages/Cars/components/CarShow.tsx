@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons/faCalendar";
 import { faGasPump } from "@fortawesome/free-solid-svg-icons/faGasPump";
+import { Link } from "react-router-dom";
 
 interface CarShowProps {
   data: {
@@ -48,9 +49,12 @@ const CarShow: React.FC<CarShowProps> = ({ data }) => {
           ${data.price}/<span className="text-gray-400">day</span>
         </div>
 
-        <button className="bg-gradient-to-r from-gray-700 via-gray-900 to-black py-2 px-4 rounded-lg text-white">
+        <Link
+          to={"/car-detail/" + data.id}
+          className="bg-gradient-to-r from-gray-700 via-gray-900 to-black py-2 px-4 rounded-lg text-white"
+        >
           Rent Now
-        </button>
+        </Link>
       </div>
     </div>
   );
