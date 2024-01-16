@@ -36,7 +36,7 @@ function CarDetail() {
   }, []);
 
   return (
-    <div className="flex gap-5 justify-center">
+    <div>
       <div className="bg-white w-[631px] h-[360px] p-6 rounded-lg">
         <h4 className="text-lg font-bold">Billing Info</h4>
         <p className="text-gray-400 mt-1 mb-5">
@@ -136,6 +136,72 @@ function CarDetail() {
             <p className="text-gray-400">Overall price rental</p>
           </div>
           <div className="font-bold">${carDetail?.price}</div>
+        </div>
+      </div>
+      <div className="bg-white w-[631px]  p-6 rounded-lg mt-10">
+        <h4 className="text-lg font-bold">Rental Info</h4>
+        <p className="text-gray-400">Please enter your billing info</p>
+        <p className="font-semibold my-6">Pick-Up</p>
+        <hr className="my-6" />
+        <div className="flex flex-wrap justify-between">
+          <div className="flex flex-col">
+            <label className="font-semibold" htmlFor="">
+              Locations
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="text"
+            />
+          </div>
+          <div className="flex flex-col ">
+            <label className="font-semibold" htmlFor="">
+              Date
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="datetime-local"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-semibold" htmlFor="">
+              Time
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="time"
+            />
+          </div>
+        </div>
+        <p className="font-semibold my-6">Drop-Off</p>
+        <hr className="my-6" />
+        <div className="flex flex-wrap justify-between">
+          <div className="flex flex-col">
+            <label className="font-semibold" htmlFor="">
+              Locations
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="text"
+            />
+          </div>
+          <div className="flex flex-col ">
+            <label className="font-semibold" htmlFor="">
+              Date
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="datetime-local"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-semibold" htmlFor="">
+              Time
+            </label>
+            <input
+              className="border w-[272px] h-[48px] p-2 rounded-lg"
+              type="time"
+            />
+          </div>
         </div>
       </div>
     </div>
