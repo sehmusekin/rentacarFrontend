@@ -166,8 +166,8 @@ function CarDetail() {
             </div>
           </div>
         </div>
-        /*Config*/
-        <div className="bg-white w-[631px] h-[350px] p-6 rounded-lg mt-5">
+
+        <div className="bg-white w-[631px] h-[350px] p-6 rounded-lg mt-10">
           <h4 className="text-lg font-bold">Confirmation</h4>
           <p className="text-gray-400">
             We are getting to the end. Just few clicks and your rental is ready!
@@ -244,8 +244,8 @@ function CarDetail() {
             <div className="font-bold">${carDetail?.price}</div>
           </div>
         </div>
-        /*Payment*/
-        <div className="bg-white w-[631px] h-[440px] p-6 rounded-lg mt-5">
+
+        <div className="bg-white w-[631px] h-[440px] p-6 rounded-lg mt-10">
           <h4 className="text-lg font-bold">Billing Info</h4>
           <p className="text-gray-400">Please enter your billing info</p>
           <div className="w-full p-6 bg-gray-200 h-[310px] rounded-lg mt-7">
