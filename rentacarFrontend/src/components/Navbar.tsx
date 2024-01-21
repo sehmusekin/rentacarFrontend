@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <>
       <nav className="bg-white ">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="flex items-center justify-between h-16 ">
             <div className="flex items-center ">
               <a href="#" className="font-extrabold text-xl text-blue-900">

@@ -1,18 +1,29 @@
+import heroimage1 from "../images/heroimage1.png";
+import heroimage2 from "../images/heroimage2.png";
+
 function Hero() {
   return (
-    <div className="container mx-auto mt-10">
-      <div className=" md:flex md:justify-around md:space-x-6">
-        <div className="bg-red-200 flex-shrink h-64">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-          sit. Adipisci inventore quo aspernatur libero sunt est dolorum modi
-          voluptatibus magni obcaecati, neque autem omnis dolore commodi
-          delectus non quam?
+    <div className="container mt-8">
+      <div className="flex space-x-8">
+        <div className="flex-grow bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-6 rounded-lg">
+          <h3 className="text-3xl font-semibold text-white w-1/2">
+            The Best Platform for Car Rental
+          </h3>
+          <p className="w-1/2 my-4 text-white">
+            Ease of doing a car rental safely and reliably. Of course at a low
+            price.
+          </p>
+          <img className="mx-auto" src={heroimage1} alt="" />
         </div>
-        <div className="bg-red-900 flex-shrink h-64">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-          delectus mollitia tempora alias eos explicabo doloribus optio neque ab
-          minus vel quo excepturi asperiores, sequi, harum vitae, voluptatibus
-          blanditiis iusto.
+        <div className="flex-grow bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-6 rounded-lg">
+          <h3 className="text-3xl font-semibold text-white w-1/2">
+            Easy way to rent a car at a low price
+          </h3>
+          <p className="w-1/2 my-4 text-white">
+            Providing cheap car rental services and safe and comfortable
+            facilities.
+          </p>
+          <img className="mx-auto" src={heroimage2} alt="" />
         </div>
       </div>
     </div>

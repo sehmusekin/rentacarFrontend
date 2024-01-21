@@ -1,3 +1,4 @@
+import BrandSlider from "../components/BrandSlider";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
@@ -6,6 +7,7 @@ function HomePage() {
     <>
       <Navbar />
       <Hero />
+      <BrandSlider />
     </>
   );
 }
