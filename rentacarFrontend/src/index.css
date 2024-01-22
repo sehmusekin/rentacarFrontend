@@ -6,12 +6,3 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: rgb(241, 238, 238);
 }
-/* CSS dosyanıza ekleyin veya inline olarak component içinde kullanabilirsiniz */
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
