@@ -1,7 +1,7 @@
-import istanbul from "../images/istanbul.jpg";
-import sivas from "../images/sivas.jpg";
-import eskisehir from "../images/eskisehir.jpg";
-import mardin from "../images/mardin.jpg";
+import istanbul from "../images/locationImage/istanbul.jpg";
+import sivas from "../images/locationImage/sivas.jpg";
+import eskisehir from "../images/locationImage/eskisehir.jpg";
+import mardin from "../images/locationImage/mardin.jpg";
 
 function Locations() {
   return (
