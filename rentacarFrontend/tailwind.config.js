@@ -9,11 +9,11 @@ export default {
       keyframes: {
         translate: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-60%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
-        translate: "translate 70s linear infinite",
+        translate: "translate 10s linear infinite",
       },
     },
   },
