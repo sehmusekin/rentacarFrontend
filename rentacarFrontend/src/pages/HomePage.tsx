@@ -1,4 +1,5 @@
 import BrandSlider from "../components/BrandSlider";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Locations from "../components/Locations";
 import Navbar from "../components/Navbar";
@@ -12,6 +13,7 @@ function HomePage() {
       <BrandSlider />
       <OurServices />
       <Locations />
+      <Footer />
     </>
   );
 }
