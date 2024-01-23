@@ -7,7 +7,7 @@ function Navbar() {
   };
   return (
     <>
-      <nav className="bg-white ">
+      <nav className="bg-white px-1 lg:px-0 ">
         <div className="container">
           <div className="flex items-center justify-between h-16 ">
             <div className="flex items-center ">

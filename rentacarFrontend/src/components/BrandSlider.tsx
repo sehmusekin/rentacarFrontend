@@ -52,7 +52,7 @@ const images = [
 
 function BrandSlider() {
   return (
-    <div className="container my-8">
+    <div className="container my-8 px-3 lg:px-0 ">
       <div className="flex overflow-hidden whitespace-nowrap rounded-lg bg-blue-00 bg-white">
         <div className="flex items-center py-4 md:py-8 space-x-4 md:space-x-16 animate-translate">
           {images.map((image, index) => (

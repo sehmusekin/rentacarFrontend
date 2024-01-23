@@ -1,13 +1,12 @@
 function Footer() {
   return (
-    <div className="bg-white p-6 w-full">
+    <div className="bg-white p-1 lg:p-6 w-full">
       <div className="w-full md:w-3/4 mx-auto flex-col lg:flex lg:flex-row">
         <div className=" md:basis-1/4">
           <h4 className="text-blue-900 font-extrabold text-3xl">Rent-A-Car</h4>
           <p className="text-gray-500 mt-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore,
-            hic asperiores quis id nam quae molestias pariatur deserunt nihil
-            voluptatem.
+            Our vision is to provide convenience and help increase your sales
+            business.
           </p>
         </div>
         <div className="flex md:basis-3/4 justify-around lg:justify-end gap-6 lg:gap-12 mt-6 lg:mt-0">
