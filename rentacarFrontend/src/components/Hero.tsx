@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div className="container mt-8">
       <div className=" flex-col lg:flex lg:flex-row space-x-0 lg:space-x-8 space-y-8 lg:space-y-0">
-        <div className="flex flex-col justify-between flex-grow bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-6 rounded-lg">
+        <div className="flex flex-col justify-between flex-grow bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-3 lg:p-6 rounded-lg">
           <h3 className="text-xl md:text-3xl font-semibold text-white w-full md:w-1/2">
             The Best Platform for Car Rental
           </h3>
@@ -19,7 +19,7 @@ function Hero() {
             alt=""
           />
         </div>
-        <div className="flex flex-col justify-between flex-grow bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-6 rounded-lg">
+        <div className="flex flex-col justify-between flex-grow bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-3 lg:p-6 rounded-lg">
           <h3 className="text-xl md:text-3xl font-semibold text-white w-full md:w-1/2">
             Easy way to rent a car at a low price
           </h3>
