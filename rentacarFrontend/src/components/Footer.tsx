@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="bg-white  p-6 w-full">
+    <div className="bg-white p-6 w-full">
       <div className="w-3/4 mx-auto flex justify-ar">
         <div className=" basis-1/4">
           <h4 className="text-blue-900 font-extrabold text-3xl">Rent-A-Car</h4>

@@ -1,26 +1,27 @@
 import istanbul from "../images/locationImage/istanbul.jpg";
 import sivas from "../images/locationImage/sivas.jpg";
 import eskisehir from "../images/locationImage/eskisehir.jpg";
-import mardin from "../images/locationImage/mardin.jpg";
 
 function Locations() {
   return (
     <div className="container my-10 bg-white p-6  rounded-lg">
-      <h3 className="text-blue-500 font-bold text-2xl mb-6">Our Dealers</h3>
-      <div className="flex items-center justify-center gap-5">
+      <h3 className="text-blue-500 font-bold text-xl lg:text-2xl mb-6">
+        Our Dealers
+      </h3>
+      <div className="flex flex-wrap items-center justify-center gap-5">
         <div className="flex-grow relative group">
           <a
             target="_blank"
             href="https://www.google.com/search?sca_esv=600400644&tbs=lf:1,lf_ui:4&tbm=lcl&sxsrf=ACQVn08VwdcNhfsfbLUjtpqP_BXs8nO0eQ:1705933533760&q=istanbul+garenta&rflfq=1&num=10&ved=2ahUKEwi_5qjSmfGDAxXi-QIHHdZKDlkQtgN6BAgbEAI#rlfi=hd:;si:;mv:[[41.16569680765136,29.192265802929704],[40.9653459835059,28.67728167207033]]"
           >
             <img
-              className="group-hover:scale-110 duration-500 h-[200px] object-cover rounded-lg"
+              className="group-hover:scale-110 duration-500 h-[150px] md:h-[200px] w-full object-cover rounded-lg"
               src={istanbul}
               alt=""
             />
           </a>
 
-          <h4 className="absolute top-0 text-white left-2 text-2xl font-extrabold">
+          <h4 className="absolute top-0 text-white left-2 text-xl md:text-2xl font-extrabold">
             ISTANBUL
           </h4>
         </div>
@@ -31,13 +32,13 @@ function Locations() {
           >
             {" "}
             <img
-              className="group-hover:scale-110 duration-500 h-[200px] object-cover rounded-lg"
+              className="group-hover:scale-110 duration-500 h-[150px] md:h-[200px] w-full object-cover rounded-lg"
               src={sivas}
               alt=""
             />
           </a>
 
-          <h4 className="absolute top-0 text-white left-2 text-2xl font-extrabold">
+          <h4 className="absolute top-0 text-white left-2 text-xl md:text-2xl w-full font-extrabold">
             SIVAS
           </h4>
         </div>
@@ -47,30 +48,14 @@ function Locations() {
             target="_blank"
           >
             <img
-              className="group-hover:scale-110 duration-500 h-[200px] object-cover rounded-lg"
+              className="group-hover:scale-110 duration-500 h-[150px] md:h-[200px] w-full object-cover rounded-lg"
               src={eskisehir}
               alt=""
             />
           </a>
 
-          <h4 className="absolute top-0 text-white left-2 text-2xl font-extrabold">
+          <h4 className="absolute top-0 text-white left-2 text-xl md:text-2xl font-extrabold">
             ESKISEHIR
-          </h4>
-        </div>
-        <div className="group relative ">
-          <a
-            href="https://www.google.com/search?q=mardin+ara%C3%A7+kiralama&sca_esv=600400644&tbm=lcl&sxsrf=ACQVn0_cmuQ1SjzVOKSs_6AibsOUfX9MyQ%3A1705933662837&ei=XnuuZfXZMumExc8P9NWIyAQ&udm=&ved=0ahUKEwj1gO-PmvGDAxVpQvEDHfQqAkkQ4dUDCAk&uact=5&oq=mardin+ara%C3%A7+kiralama&gs_lp=Eg1nd3Mtd2l6LWxvY2FsIhVtYXJkaW4gYXJhw6cga2lyYWxhbWEyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgYQABgHGB4yBRAAGIAEMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB5I-AlQAFj7B3AAeACQAQCYAcUBoAGFB6oBAzAuNrgBA8gBAPgBAcICBxAAGIAEGA0&sclient=gws-wiz-local#rlfi=hd:;si:;mv:[[37.3338944,40.7428978],[37.311326099999995,40.7109033]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2"
-            target="_blank"
-          >
-            <img
-              className="group-hover:scale-110 duration-500 h-[200px]  object-cover rounded-lg"
-              src={mardin}
-              alt=""
-            />
-          </a>
-
-          <h4 className="absolute top-0 text-white left-2 text-2xl font-extrabold">
-            MARDIN
           </h4>
         </div>
       </div>
