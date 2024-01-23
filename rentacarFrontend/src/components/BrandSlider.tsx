@@ -54,9 +54,14 @@ function BrandSlider() {
   return (
     <div className="container my-8">
       <div className="flex overflow-hidden whitespace-nowrap rounded-lg bg-blue-00 bg-white">
-        <div className="flex items-center py-8 space-x-16 animate-translate">
+        <div className="flex items-center py-4 md:py-8 space-x-4 md:space-x-16 animate-translate">
           {images.map((image, index) => (
-            <img key={index} className="h-20" alt={image} src={image} />
+            <img
+              key={index}
+              className="h-10 md:h-20 "
+              alt={image}
+              src={image}
+            />
           ))}
         </div>
       </div>
