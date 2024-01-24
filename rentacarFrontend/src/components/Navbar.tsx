@@ -1,10 +1,23 @@
 import { useState } from "react";
 
 function Navbar() {
-  const [isClick, setİsClick] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
   const toggleNavbar = () => {
-    setİsClick(!isClick);
+    setIsClick(!isClick);
   };
+
+  const handleLogin = () => {
+    // Kimlik doğrulama mantığınızı buraya ekleyin
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    // Çıkış mantığınızı buraya ekleyin
+    setLoggedIn(false);
+  };
+
   return (
     <>
       <nav className="bg-white px-1 lg:px-0 ">
@@ -12,7 +25,7 @@ function Navbar() {
           <div className="flex items-center justify-between h-16 ">
             <div className="flex items-center ">
               <a href="#" className="font-extrabold text-xl text-blue-900">
-                RENT-A-CAR
+                HTS-Wheels
               </a>
             </div>
             <div className="hidden md:block">
@@ -22,9 +35,21 @@ function Navbar() {
                 <a href="#">Services</a>
                 <a href="#">Contact</a>
                 <div className="flex items-center space-x-3">
-                  <button className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg">
-                    Login
-                  </button>
+                  {isLoggedIn ? (
+                    <button
+                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  ) : (
+                    <button
+                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg"
+                      onClick={handleLogin}
+                    >
+                      Login
+                    </button>
+                  )}
                   <button>Sign Up</button>
                 </div>
               </div>
@@ -85,9 +110,21 @@ function Navbar() {
                 Contact
               </a>
               <div className="flex items-center space-x-3">
-                <button className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold ">
-                  Login
-                </button>
+                {isLoggedIn ? (
+                  <button
+                    className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <button
+                    className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
+                    onClick={handleLogin}
+                  >
+                    Login
+                  </button>
+                )}
                 <button className="font-bold">Sign Up</button>
               </div>
             </div>
