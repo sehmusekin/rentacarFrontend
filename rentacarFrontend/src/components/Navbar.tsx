@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isClick, setIsClick] = useState(false);
@@ -30,10 +31,11 @@ function Navbar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex font-bold items-center space-x-10">
-                <a href="#">Home</a>
-                <a href="#">About</a>
+                <Link to="/">Home</Link>
+                <a href="#">Locations</a>
                 <a href="#">Services</a>
                 <a href="#">Contact</a>
+                <Link to="/rental">Rental Now</Link>
                 <div className="flex items-center space-x-3">
                   {isLoggedIn ? (
                     <button
@@ -44,7 +46,7 @@ function Navbar() {
                     </button>
                   ) : (
                     <button
-                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg"
+                      className="border bg-blue-900 px-6 py-2 text-white rounded-lg"
                       onClick={handleLogin}
                     >
                       Login

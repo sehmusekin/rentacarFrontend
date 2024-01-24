@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroimage1 from "../images/heroImage/heroimage1.png";
 import heroimage2 from "../images/heroImage/heroimage2.png";
 
@@ -13,12 +14,12 @@ function Hero() {
             Ease of doing a car rental safely and reliably. Of course at a low
             price.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/rental"
             className="text-white w-[86px] md:w-24 bg-blue-800 px-1 py-2 rounded-lg text-sm sm:text-base "
           >
             Rental Now
-          </a>
+          </Link>
           <img
             className="mx-auto w-[250px] md:w-[350px] "
             src={heroimage1}
@@ -33,12 +34,12 @@ function Hero() {
             Providing cheap car rental services and safe and comfortable
             facilities.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/rental"
             className="text-white w-[86px] md:w-24 bg-blue-400 px-1 py-2 rounded-lg text-sm sm:text-base"
           >
             Rental Now
-          </a>
+          </Link>
           <img
             className="mx-auto w-[250px] md:w-[350px] "
             src={heroimage2}
