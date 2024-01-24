@@ -98,7 +98,7 @@ function FilterSidebar() {
               onChange={handleSliderChange}
               className="my-2"
             />
-            PRICE {sliderValue}$
+            <p className="text-sm">PRICE {sliderValue}$</p>
           </label>
         </div>
       </div>
