@@ -10,6 +10,7 @@ function Hero() {
           <h3 className="text-xl md:text-3xl font-semibold text-white w-full md:w-1/2">
             The Best Platform for Car Rental
           </h3>
+
           <p className="w-full text-sm md:text-lg lg:w-1/2 my-4 text-white">
             Ease of doing a car rental safely and reliably. Of course at a low
             price.
@@ -20,6 +21,7 @@ function Hero() {
           >
             Rental Now
           </Link>
+
           <img
             className="mx-auto w-[250px] md:w-[350px] "
             src={heroimage1}

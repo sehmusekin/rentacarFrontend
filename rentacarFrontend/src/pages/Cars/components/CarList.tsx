@@ -2,28 +2,51 @@
 import React from "react";
 import { Car } from "../../../models/responses/car/GetAllCarResponses";
 import heroimage2 from "../../../images/heroImage/heroimage2.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarDays,
+  faDroplet,
+  faGasPump,
+} from "@fortawesome/free-solid-svg-icons";
 interface CarListProps {
   car: Car;
 }
 
 const CarList: React.FC<CarListProps> = ({ car }) => {
   return (
-    <div className="border">
+    <div className="border bg-white p-5 rounded-lg space-y-8">
       <div>
-        <h4>{car.modelName}</h4>
-        <p>{car.categoryName}</p>
+        <h4 className="font-bold">{car.modelName}</h4>
+        <p className="text-gray-400">{car.categoryName}</p>
       </div>
       <div>
         <img src={heroimage2} width={280} alt="" />
       </div>
-      <div className="flex">
-        <div>{car.fuelType}</div>
-        <div>{car.colorName}</div>
-        <div>{car.kilometer}</div>
+      <div className="flex justify-around">
+        <div className="flex items-center">
+          <FontAwesomeIcon className="mr-1 text-gray-400" icon={faGasPump} />
+          <p className="text-sm text-gray-400">{car.fuelType}</p>
+        </div>
+        <div className="flex items-center">
+          <FontAwesomeIcon className="mr-1  text-gray-400" icon={faDroplet} />
+          <p className="text-sm text-gray-400">{car.colorName}</p>
+        </div>
+        <div className="flex items-center">
+          <FontAwesomeIcon
+            className="mr-1  text-gray-400"
+            icon={faCalendarDays}
+          />
+          <p className="text-sm text-gray-400">{car.year}</p>
+        </div>
       </div>
-      <div className="flex">
-        <div>{car.price}$</div>
-        <button>Rent Now</button>
+      <div className="flex justify-between items-center">
+        <p className="font-bold">
+          {car.price}.00$/
+          <span className="text-gray-400 font-bold text-sm">days</span>{" "}
+        </p>
+        <button className="border px-4 py-2 rounded-lg bg-blue-600 text-white font-bold">
+          Rent Now
+        </button>
       </div>
     </div>
   );
