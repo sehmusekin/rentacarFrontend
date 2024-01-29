@@ -1,6 +1,6 @@
 import istanbul from "../images/locationImage/istanbul.jpg";
 import sivas from "../images/locationImage/sivas.jpg";
-import eskisehir from "../images/locationImage/eskisehir.jpg";
+import adana from "../images/locationImage/adana.jpg";
 
 function Locations() {
   return (
@@ -50,13 +50,13 @@ function Locations() {
             >
               <img
                 className="group-hover:scale-110 duration-500 h-[150px] md:h-[200px] w-full object-cover rounded-lg"
-                src={eskisehir}
+                src={adana}
                 alt=""
               />
             </a>
 
             <h4 className="absolute top-0 text-white left-2 text-xl md:text-2xl font-extrabold">
-              ESKISEHIR
+              ADANA
             </h4>
           </div>
         </div>
