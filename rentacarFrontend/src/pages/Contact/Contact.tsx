@@ -25,7 +25,12 @@ function Contact() {
   };
 
   return (
-    <section className="flex bg-gradient-to-tl from-blue-900 via-blue-700 to-blue-900 container mx-auto rounded-3xl my-10">
+    <section className="flex  overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 container mx-auto rounded-3xl my-10">
+      <div className="bg-white  basis-1/3 rounded-3xl">
+        <div className="overflow-hidden rounded-3xl">
+          <img src={contact} className="object-cover" />
+        </div>
+      </div>
       <div className="basis-2/3 py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
           Contact Us
