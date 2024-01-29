@@ -8,4 +8,5 @@ export interface Car {
   colorName: string | null;
   fuelType: string | null;
   categoryName: string | null;
+  gearType: string;
 }

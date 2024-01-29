@@ -7,15 +7,15 @@ import CarDetails from "./pages/CarDetails/CarDetails";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/rental" element={<Cars />} />
+        <Route path="/cars" element={<Cars />} />
         <Route path="/cardetail/:id" element={<CarDetails />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

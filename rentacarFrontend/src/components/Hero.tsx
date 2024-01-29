@@ -16,7 +16,7 @@ function Hero() {
             price.
           </p>
           <Link
-            to="/rental"
+            to="/cars"
             className="text-white w-[86px] md:w-24 bg-blue-800 px-1 py-2 rounded-lg text-sm sm:text-base "
           >
             Rental Now
@@ -37,7 +37,7 @@ function Hero() {
             facilities.
           </p>
           <Link
-            to="/rental"
+            to="/cars"
             className="text-white w-[86px] md:w-24 bg-blue-400 px-1 py-2 rounded-lg text-sm sm:text-base"
           >
             Rental Now
