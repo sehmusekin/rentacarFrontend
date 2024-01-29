@@ -1,6 +1,18 @@
 import { FormEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import contact from "../../images/contact.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhoneVolume,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faDiscord,
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 function Contact() {
   const form = useRef<HTMLFormElement>(null);
 
@@ -30,7 +42,37 @@ function Contact() {
         <div className="overflow-hidden rounded-3xl">
           <img src={contact} className="object-cover" />
         </div>
+        <div className="p-5 space-y-10 mt-5 font-semibold">
+          <div className="flex items-center ">
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="text-gray-500 text-xl mr-4"
+            />
+            <p>Pg. de Gràcia, 121, Gràcia, 08008 Barcelona, İspanya</p>
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon
+              icon={faPhoneVolume}
+              className="text-gray-500 text-xl mr-4"
+            />
+            <p>+34 58015801</p>
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-gray-500 text-xl mr-4"
+            />
+            <p>pair2rentacar@gmail.com</p>
+          </div>
+          <div className="text-gray-500 text-xl space-x-10">
+            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faDiscord} />
+            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faFacebookF} />
+          </div>
+        </div>
       </div>
+
       <div className="basis-2/3 py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
           Contact Us
