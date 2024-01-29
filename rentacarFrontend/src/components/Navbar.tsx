@@ -34,7 +34,7 @@ function Navbar() {
                 <Link to="/">Home</Link>
                 <a href="#">Locations</a>
                 <a href="#">Services</a>
-                <a href="#">Contact</a>
+                <Link to="/contact">Contact</Link>
                 <Link to="/cars">Rental Now</Link>
                 <div className="flex items-center space-x-3">
                   {isLoggedIn ? (

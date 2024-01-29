@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Cars from "./pages/Cars/Cars";
 import CarDetails from "./pages/CarDetails/CarDetails";
 import Rental from "./pages/Rental/Rental";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/cars" element={<Cars />} />
         <Route path="/cardetail/:id" element={<CarDetails />} />
         <Route path="/rental" element={<Rental />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
