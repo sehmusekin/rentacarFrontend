@@ -8,6 +8,7 @@ import {
   faDroplet,
   faGasPump,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 interface CarListProps {
   car: Car;
 }
@@ -44,9 +45,12 @@ const CarList: React.FC<CarListProps> = ({ car }) => {
           {car.price}.00$/
           <span className="text-gray-400 font-bold text-sm">days</span>{" "}
         </p>
-        <button className="border px-4 py-2 rounded-lg bg-blue-600 text-white font-bold">
-          Rent Now
-        </button>
+        <Link
+          to={`/cardetail/${car.id}`}
+          className="border px-4 py-2 rounded-lg bg-blue-600 text-white font-bold text-sm uppercase"
+        >
+          Rent now
+        </Link>
       </div>
     </div>
   );
