@@ -23,14 +23,14 @@ function CarDetail() {
     fetchDetails();
   }, []);
   return (
-    <div className="container">
-      <div className="flex justify-center space-x-5 my-10">
+    <div className="container p-5">
+      <div className="flex flex-col md:flex md:flex-row justify-center space-x-0 md:space-x-5 md:my-10">
         <div className=" basis-1/2 bg-slate-700 rounded-lg">
-          <div className="flex flex-col justify-around h-full space-y-6 p-5">
-            <h3 className="font-bold text-white text-3xl w-1/2">
+          <div className="flex flex-col justify-around h-full  space-y-6 p-5">
+            <h3 className="font-bold text-white text-xl md:text-3xl w-full md:w-1/2">
               Sports car with the best design and acceleration
             </h3>
-            <p className="text-white text-lg font-semibold">
+            <p className="text-white text-sm  md:text-lg font-semibold">
               Safety and comfort while driving a futuristic and elegant sports
               car
             </p>
@@ -38,16 +38,16 @@ function CarDetail() {
             <img src={heroimage} width={500} />
           </div>
         </div>
-        <div className="basis-1/2 bg-white rounded-lg p-5 space-y-5">
-          <h3 className="font-extrabold text-2xl ">
+        <div className="text-sm md:text-lg basis-1/2 bg-white rounded-lg p-5 space-y-5 mt-5 md:mt-0">
+          <h3 className="font-extrabold text-xl md:text-2xl ">
             Nissan {carDetail?.modelName}
           </h3>
-          <p className="leading-relaxed text-gray-400 font-semibold">
+          <p className="leading-relaxed text-gray-400 font-semibold text-xs md:text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
             autem natus tenetur delectus excepturi provident magni atque aliquid
             saepe distinctio!
           </p>
-          <div className="flex flex-col justify-start space-y-1 w-1/3 font-semibold">
+          <div className="flex flex-col justify-start space-y-1 w-full md:w-1/3 font-semibold">
             <p className="flex justify-between">
               <span className="text-gray-400 ">Type Car</span>{" "}
               {carDetail?.categoryName}
@@ -81,8 +81,8 @@ function CarDetail() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-slate-700 p-5 mb-10 rounded-lg items-center justify-around w-1/2 mx-auto space-y-5">
-        <p className="text-white  font-semibold leading-relaxed tracking-wide ">
+      <div className="flex flex-col bg-slate-700 p-5  mt-5 md:mt-0 md:mb-10 rounded-lg items-center justify-around w-full md:w-1/2 mx-auto space-y-5">
+        <p className="text-white text-sm md:text-base font-semibold leading-relaxed tracking-wide ">
           By clicking the Rental Now button, you can quickly and easily rent
           vehicles that will meet your travels or daily needs. We help you find
           the most suitable vehicle for you with our affordable prices, wide
