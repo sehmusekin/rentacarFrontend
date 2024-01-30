@@ -8,8 +8,8 @@ function FilterSidebar() {
   };
   return (
     <div className="basis-1/4  text-gray-500 ">
-      <div className="space-y-10 bg-white p-5 rounded-lg">
-        <div className="flex flex-col space-y-2">
+      <div className="flex flex-wrap md:flex md:flex-col md:flex-nowrap md:space-y-10 bg-white p-5 rounded-lg">
+        <div className="basis-1/2 flex flex-col space-y-2">
           <h4 className="text-xs text-gray-400 tracking-wider">TYPE</h4>
           <label>
             <input className="mr-2" type="checkbox" value="audi" />
@@ -36,7 +36,7 @@ function FilterSidebar() {
             Hatchback
           </label>
         </div>
-        <div className="flex flex-col space-y-2">
+        <div className="basis-1/2 flex flex-col space-y-2">
           <h4 className="text-xs text-gray-400 tracking-wider">CAPACİTY</h4>
           <label>
             <input className="mr-2" type="checkbox" value="audi" />2 Person
@@ -48,7 +48,7 @@ function FilterSidebar() {
             <input className="mr-2" type="checkbox" value="audi" />6 Person
           </label>
         </div>
-        <div className="flex flex-col space-y-2">
+        <div className="flex basis-1/2 flex-col space-y-2 mt-5 md:mt-0">
           <h4 className="text-xs text-gray-400 tracking-wider">COLOR</h4>
           <label>
             <input className="mr-2" type="checkbox" />
@@ -67,7 +67,7 @@ function FilterSidebar() {
             Gray
           </label>
         </div>
-        <div className="flex flex-col space-y-2">
+        <div className="flex basis-1/2 flex-col space-y-2 mt-5 md:mt-0">
           <h3 className="text-xs text-gray-400 tracking-wider">FUEL</h3>
           <label>
             <input className="mr-2" type="checkbox" />
@@ -86,7 +86,7 @@ function FilterSidebar() {
             Electricity
           </label>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-5 md:mt-5">
           <h3 className=" text-xs text-gray-400 tracking-wider">PRICE</h3>
 
           <label className=" flex flex-col">
