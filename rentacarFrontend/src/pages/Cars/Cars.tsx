@@ -28,9 +28,9 @@ function Cars() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex gap-4 p-5">
+      <div className="flex-col md:flex md:flex-row justify-center md:gap-4 p-5">
         <FilterSidebar />
-        <div className="basis-3/4 flex flex-wrap">
+        <div className="basis-3/4 flex flex-wrap mt-5 md:mt-0 space-y-5 md:space-y-0">
           {cars.slice(0, showAllCars ? cars.length : 9).map((car, index) => (
             <CarList car={car} key={index} />
           ))}
