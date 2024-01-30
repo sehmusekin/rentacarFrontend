@@ -15,7 +15,7 @@ interface CarListProps {
 
 const CarList: React.FC<CarListProps> = ({ car }) => {
   return (
-    <div className="border bg-white p-5 rounded-lg space-y-8">
+    <div className="border bg-white w-full md:w-auto mx-auto md:mx-0 p-5 rounded-lg space-y-8">
       <div>
         <h4 className="font-bold">{car.modelName}</h4>
         <p className="text-gray-400">{car.categoryName}</p>
