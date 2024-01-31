@@ -7,18 +7,18 @@ import CarService from "../../services/CarService/CarService";
 function Cars() {
   const [cars, setCars] = useState<Car[]>([]);
   const [showAllCars, setShowAllCars] = useState(false);
-
+  const fetchCars = async () => {
+    try {
+      const carService = new CarService();
+      const result = await carService
+        .getAllCars()
+        .then((result) => result.data.data);
+      setCars(result);
+    } catch (error) {
+      console.error("Error fetching cars:", error);
+    }
+  };
   useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const carService = new CarService();
-        const result = await carService.getAllCars();
-        setCars(result.data.data);
-      } catch (error) {
-        console.error("Error fetching cars:", error);
-      }
-    };
-
     fetchCars();
   }, []);
 
