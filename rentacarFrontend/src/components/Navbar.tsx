@@ -99,18 +99,21 @@ function Navbar() {
         {isClick && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#" className="block rounded:lg p-2 font-bold">
+              <Link className="block rounded:lg p-2 font-bold" to="/">
                 Home
+              </Link>
+              <a className="block rounded:lg p-2 font-bold" href="#">
+                Locations
               </a>
-              <a href="#" className="block rounded:lg p-2 font-bold">
-                About
-              </a>{" "}
-              <a href="#" className="block rounded:lg p-2 font-bold">
+              <a className="block rounded:lg p-2 font-bold" href="#">
                 Services
-              </a>{" "}
-              <a href="#" className="block rounded:lg p-2 font-bold">
-                Contact
               </a>
+              <Link className="block rounded:lg p-2 font-bold" to="/contact">
+                Contact
+              </Link>
+              <Link className="block rounded:lg p-2 font-bold" to="/cars">
+                Rental Now
+              </Link>
               <div className="flex items-center space-x-3">
                 {isLoggedIn ? (
                   <button
