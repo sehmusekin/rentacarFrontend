@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import heroimage1 from "../images/heroImage/heroimage1.png";
-import heroimage2 from "../images/heroImage/heroimage2.png";
+import heroimage1 from "/images/heroImage/heroimage1.png";
+import heroimage2 from "/images/heroImage/heroimage2.png";
 
 function Hero() {
   return (

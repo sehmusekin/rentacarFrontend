@@ -1,7 +1,7 @@
 // CarList.jsx
 import React from "react";
 import { Car } from "../../../models/responses/car/GetAllCarResponses";
-import heroimage2 from "../../../images/heroImage/heroimage2.png";
+import heroimage2 from "/images/heroImage/heroimage2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,

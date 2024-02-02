@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CarService from "../../services/CarService/CarService";
 import { Car } from "../../models/responses/car/GetAllCarResponses";
-import heroimage from "../../images/heroImage/heroimage1.png";
+import heroimage from "/images/heroImage/heroimage1.png";
 function CarDetail() {
   const [carDetail, setCarDetail] = useState<Car>();
   const { id } = useParams<{ id: string }>();

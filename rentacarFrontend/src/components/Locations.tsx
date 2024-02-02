@@ -1,6 +1,6 @@
-import istanbul from "../images/locationImage/istanbul.jpg";
-import sivas from "../images/locationImage/sivas.jpg";
-import adana from "../images/locationImage/adana.jpg";
+import istanbul from "/images/locationImage/istanbul.jpg";
+import sivas from "/images/locationImage/sivas.jpg";
+import adana from "/images/locationImage/adana.jpg";
 
 function Locations() {
   return (
