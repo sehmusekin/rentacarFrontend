@@ -9,12 +9,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-/* CSS dosyanıza ekleyin veya inline olarak component içinde kullanabilirsiniz */
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}

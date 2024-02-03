@@ -47,7 +47,7 @@ function CarDetail() {
             autem natus tenetur delectus excepturi provident magni atque aliquid
             saepe distinctio!
           </p>
-          <div className="flex flex-col justify-start space-y-1 w-full md:w-1/3 font-semibold">
+          <div className="flex flex-col justify-start space-y-1 w-full md:w-2/3 font-semibold">
             <p className="flex justify-between">
               <span className="text-gray-400 ">Type Car</span>{" "}
               {carDetail?.categoryName}
@@ -74,28 +74,18 @@ function CarDetail() {
             </p>
           </div>
           <div className="flex items-center justify-between">
-            <h3 className="font-bold text-xl">
+            <h3 className="font-bold text-sm  md:text-xl">
               ${carDetail?.price}/
               <span className="text-gray-400 text-sm">days</span>
             </h3>
+            <Link
+              className="bg-slate-500 font-bold text-sm md:text-lg text-white  p-2 rounded-lg hover:bg-slate-700 duration-500"
+              to={"/rental"}
+            >
+              Rental Now
+            </Link>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col bg-slate-700 p-5  mt-5 md:mt-0 md:mb-10 rounded-lg items-center justify-around w-full md:w-1/2 mx-auto space-y-5">
-        <p className="text-white text-sm md:text-base font-semibold leading-relaxed tracking-wide ">
-          By clicking the Rental Now button, you can quickly and easily rent
-          vehicles that will meet your travels or daily needs. We help you find
-          the most suitable vehicle for you with our affordable prices, wide
-          range of vehicles and user-friendly reservation system. We are here to
-          make your travels more comfortable and enjoyable. Step into a new
-          adventure by renting a car now!
-        </p>
-        <Link
-          className="bg-slate-500 font-bold text-xl text-white border-2 p-2 rounded-lg hover:bg-slate-700 duration-500"
-          to={"/rental"}
-        >
-          Rental Now
-        </Link>
       </div>
     </div>
   );

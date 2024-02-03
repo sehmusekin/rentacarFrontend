@@ -1,6 +1,6 @@
 import { FormEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import contact from "/images/contact.jpg";
+import contact from "/images/contact/contact.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
