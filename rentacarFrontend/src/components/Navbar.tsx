@@ -25,9 +25,14 @@ function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between h-16 ">
             <div className="flex items-center ">
-              <a href="#" className="font-extrabold text-xl text-blue-900">
+              <img
+                src="/images/logo/car.png"
+                alt="HTS-Wheels Logo"
+                className="h-10 w-10 mr-2"
+              />
+              <Link to="/" className="font-extrabold text-xl text-blue-900">
                 HTS-Wheels
-              </a>
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex font-bold items-center space-x-10">
@@ -99,7 +104,6 @@ function Navbar() {
         {isClick && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {/* ... (existing code) */}
               <div className="flex items-center space-x-3">
                 {isLogin ? (
                   <button
