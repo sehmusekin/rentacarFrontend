@@ -30,13 +30,10 @@ const Login = () => {
   ) => {
     const isAuthenticated = true;
 
-    // Local Storage'a kaydet
     localStorage.setItem("isAuthenticated", String(isAuthenticated));
 
     // Context üzerinden durumu güncelle
     authContext.setIsAuthenticated(isAuthenticated);
-
-    // Form submit işlemleri burada yapılabilir
 
     setSubmitting(false);
     navigate("/");
