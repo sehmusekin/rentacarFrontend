@@ -1,22 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isClick, setIsClick] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLogin, setLogin] = useState(false);
+  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setIsClick(!isClick);
   };
 
   const handleLogin = () => {
-    // Kimlik doğrulama mantığınızı buraya ekleyin
-    setLoggedIn(true);
+    navigate("/login");
+    setLogin(true);
   };
 
   const handleLogout = () => {
-    // Çıkış mantığınızı buraya ekleyin
-    setLoggedIn(false);
+    setLogin(false);
   };
 
   return (
@@ -37,22 +37,22 @@ function Navbar() {
                 <Link to="/contact">Contact</Link>
                 <Link to="/cars">Rental Now</Link>
                 <div className="flex items-center space-x-3">
-                  {isLoggedIn ? (
+                  {isLogin ? (
                     <button
-                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg"
+                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
                       onClick={handleLogout}
                     >
                       Logout
                     </button>
                   ) : (
                     <button
-                      className="border bg-blue-900 px-6 py-2 text-white rounded-lg"
+                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
                       onClick={handleLogin}
                     >
                       Login
                     </button>
                   )}
-                  <button>Sign Up</button>
+                  {!isLogin && <button className="font-bold">Sign Up</button>}
                 </div>
               </div>
             </div>
@@ -99,23 +99,9 @@ function Navbar() {
         {isClick && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link className="block rounded:lg p-2 font-bold" to="/">
-                Home
-              </Link>
-              <a className="block rounded:lg p-2 font-bold" href="#">
-                Locations
-              </a>
-              <a className="block rounded:lg p-2 font-bold" href="#">
-                Services
-              </a>
-              <Link className="block rounded:lg p-2 font-bold" to="/contact">
-                Contact
-              </Link>
-              <Link className="block rounded:lg p-2 font-bold" to="/cars">
-                Rental Now
-              </Link>
+              {/* ... (existing code) */}
               <div className="flex items-center space-x-3">
-                {isLoggedIn ? (
+                {isLogin ? (
                   <button
                     className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
                     onClick={handleLogout}

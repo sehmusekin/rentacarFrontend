@@ -6,6 +6,7 @@ import Cars from "./pages/Cars/Cars";
 import CarDetails from "./pages/CarDetails/CarDetails";
 import Rental from "./pages/Rental/Rental";
 import Contact from "./pages/Contact/Contact";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cardetail/:id" element={<CarDetails />} />
         <Route path="/rental" element={<Rental />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />
     </>
