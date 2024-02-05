@@ -30,9 +30,8 @@ const Login = () => {
   ) => {
     const isAuthenticated = true;
 
-    localStorage.setItem("isAuthenticated", String(isAuthenticated));
+    localStorage.setItem("token", String(isAuthenticated));
 
-    // Context üzerinden durumu güncelle
     authContext.setIsAuthenticated(isAuthenticated);
 
     setSubmitting(false);
