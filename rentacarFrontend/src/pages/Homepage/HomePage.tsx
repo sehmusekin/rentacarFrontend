@@ -1,7 +1,7 @@
-import BrandSlider from "../../components/BrandSlider";
-import Hero from "../../components/Hero";
-import Locations from "../../components/Locations";
-import OurServices from "../../components/OurServices";
+import BrandSlider from "../../components/HomePage/BrandSlider";
+import Hero from "../../components/HomePage/Hero";
+import Locations from "../../components/HomePage/Locations";
+import OurServices from "../../components/HomePage/OurServices";
 
 function HomePage() {
   return (
