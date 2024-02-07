@@ -12,7 +12,7 @@ function Cars() {
       const carService = new CarService();
       const result = await carService
         .getAllCars()
-        .then((result) => result.data.data);
+        .then((result:any) => result.data.data);
       setCars(result);
     } catch (error) {
       console.error("Error fetching cars:", error);
