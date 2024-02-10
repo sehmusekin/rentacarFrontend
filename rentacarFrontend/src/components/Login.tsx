@@ -24,12 +24,12 @@ const Login = () => {
 
   const validationSchema = Yup.object({
     username: Yup.string()
-      .required("Kullanıcı adı zorunludur.")
-      .min(3, "Kullanıcı adı en az 3 karakter olmalıdır.")
-      .max(50, "Kullanıcı adı en fazla 50 karakter olmalıdır."),
+      .required("A username is required.")
+      .min(3, "Username must be at least 3 characters long.")
+      .max(50, "Username must be at most 50 characters long."),
     password: Yup.string()
-      .required("Şifre zorunludur.")
-      .min(8, "Şifre en az 8 karakter olmalıdır."),
+      .required("A password is required.")
+      .min(8, "Password must be at least 8 characters long."),
   });
 
   const onSubmit = (values: FormValues) => {
