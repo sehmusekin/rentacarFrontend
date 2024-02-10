@@ -1,43 +1,66 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const authContext = useContext(AuthContext);
+
   const navigate = useNavigate();
 
-  const initialValues = {
+  const [loggedInUsername, setLoggedInUsername] = useState("");
+
+  interface FormValues {
+    username: string;
+    password: string;
+  }
+
+  const initialValues: FormValues = {
     username: "",
     password: "",
-    remember: false,
   };
 
   const validationSchema = Yup.object({
     username: Yup.string()
-      .required("Username is mandatory.")
-      .min(3, "Username must be at least 3 characters.")
-      .max(50, "Username must be at most 50 characters."),
+      .required("Kullanıcı adı zorunludur.")
+      .min(3, "Kullanıcı adı en az 3 karakter olmalıdır.")
+      .max(50, "Kullanıcı adı en fazla 50 karakter olmalıdır."),
     password: Yup.string()
-      .required("Password is mandatory.")
-      .min(8, "Password must be at least 8 characters."),
+      .required("Şifre zorunludur.")
+      .min(8, "Şifre en az 8 karakter olmalıdır."),
   });
 
-  const onSubmit = (
-    values: typeof initialValues,
-    { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
-  ) => {
-    const isAuthenticated = true;
+  const onSubmit = (values: FormValues) => {
+    const { username, password } = values;
 
-    localStorage.setItem("token", String(isAuthenticated));
-
-    authContext.setIsAuthenticated(isAuthenticated);
-
-    setSubmitting(false);
-    navigate("/");
+    axios
+      .post("http://localhost:8080/api/v1/auths/login", {
+        username,
+        password,
+      })
+      .then(
+        (response) => {
+          authContext.setIsAuthenticated(true);
+          console.log(response.data.data);
+          const token = response.data;
+          localStorage.setItem("token", token);
+          setLoggedInUsername(username);
+          navigate("/");
+        },
+        (error) => {
+          console.log(error.response.data);
+        }
+      );
   };
 
+  const handleLogout = () => {
+    authContext.setIsAuthenticated(false);
+    localStorage.removeItem("token");
+    setLoggedInUsername("");
+    navigate("/login");
+  };
   return (
     <div>
       <Formik

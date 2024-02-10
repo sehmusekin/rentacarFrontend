@@ -1,27 +1,22 @@
-import {
-  createContext,
-  useState,
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-} from "react";
+// AuthContext.js
+import { createContext, useState, ReactNode } from "react";
 
-interface AuthContextProps {
+interface AuthContextType {
   isAuthenticated: boolean;
-  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const AuthContext = createContext<AuthContextProps>({
+export const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
   setIsAuthenticated: () => {},
 });
 
-export const AuthProvider = (props: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("token") !== null);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 };

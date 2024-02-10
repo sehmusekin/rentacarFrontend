@@ -25,13 +25,12 @@ function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between h-16 ">
             <div className="flex items-center ">
-              <img
-                src="/images/logo/logo.png"
-                alt="HTS-Wheels Logo"
-                className="h-10 w-15 mr-2"
-              />
               <Link to="/" className="font-extrabold text-xl text-blue-900">
-                
+                <img
+                  src="/images/logo/logo.png"
+                  alt="HTS-Wheels Logo"
+                  className="h-10 w-15 mr-2"
+                />
               </Link>
             </div>
             <div className="hidden md:block">
