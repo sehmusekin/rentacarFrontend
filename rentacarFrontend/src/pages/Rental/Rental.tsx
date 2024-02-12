@@ -1,3 +1,6 @@
+import PaymentPage from "../../components/Payments/Payment";
+
+
 function Rental() {
   return (
     <div className="flex gap-10 my-10 justify-center">
@@ -132,7 +135,7 @@ function Rental() {
         </div>
 
         <div className="bg-white w-[631px] h-[350px] p-6 rounded-lg mt-10">
-          <h4 className="text-lg font-bold">Confirmation</h4> 
+          <h4 className="text-lg font-bold">Confirmation</h4>
           <p className="text-gray-400">
             We are getting to the end. Just few clicks and your rental is ready!
           </p>
@@ -256,6 +259,7 @@ function Rental() {
           </div>
         </div>
       </div>
+      <PaymentPage />
     </div>
   );
 }
