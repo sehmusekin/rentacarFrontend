@@ -142,14 +142,14 @@ function Rental() {
           <div className="flex gap-5 items-center bg-gray-200 p-4 rounded-lg my-5">
             <input type="checkbox" />
             <p className="font-semibold">
-              I agree with sending an Marketing and newsletter emails. No spam,
+              I agree with sending an marketing and newsletter emails. No spam,
               promissed!
             </p>
           </div>
           <div className="flex gap-5 items-center bg-gray-200 p-4 rounded-lg">
             <input type="checkbox" />
             <p className="font-semibold">
-              I agree with our terms and conditions and privacy policy!
+              I agree with our terms and conditions and privacy policy.
             </p>
           </div>
           <button className="border py-2 px-4 bg-blue-600 rounded-lg text-white font-semibold mt-5">
