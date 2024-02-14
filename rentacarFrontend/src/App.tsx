@@ -7,6 +7,8 @@ import CarDetails from "./pages/CarDetails/CarDetails";
 import Rental from "./pages/Rental/Rental";
 import Contact from "./pages/Contact/Contact";
 import Login from "./components/Login";
+import Categories from "./pages/Category/Categories";
+import CategoryList from "./pages/Category/CategoryList";
 
 function App() {
   return (
@@ -19,10 +21,14 @@ function App() {
         <Route path="/rental" element={<Rental />} />
         <Route path="/contact" element={<Contact />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/categories' element={<Categories />} />
+        <Route path="/category-list/:id" element={<CategoryList />} />
       </Routes>
       <Footer />
     </>
   );
+
+  
 }
 
 export default App;

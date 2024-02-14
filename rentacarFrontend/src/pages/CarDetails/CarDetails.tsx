@@ -40,12 +40,10 @@ function CarDetail() {
         </div>
         <div className="text-sm md:text-lg basis-1/2 bg-white rounded-lg p-5 space-y-5 mt-5 md:mt-0">
           <h3 className="font-extrabold text-xl md:text-2xl ">
-            Nissan {carDetail?.modelName}
+           {carDetail?.modelName}
           </h3>
           <p className="leading-relaxed text-gray-400 font-semibold text-xs md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            autem natus tenetur delectus excepturi provident magni atque aliquid
-            saepe distinctio!
+          {/* {carDetail?.description} */} Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ex ipsum dolores, totam at voluptas.
           </p>
           <div className="flex flex-col justify-start space-y-1 w-full md:w-2/3 font-semibold">
             <p className="flex justify-between">

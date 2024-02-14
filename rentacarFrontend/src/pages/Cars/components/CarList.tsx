@@ -17,11 +17,12 @@ const CarList: React.FC<CarListProps> = ({ car }) => {
   return (
     <div className="border bg-white w-full md:w-auto mx-auto md:mx-0 p-5 rounded-lg space-y-8">
       <div>
+      <h4 className="font-bold">{car.brandName}</h4>
         <h4 className="font-bold">{car.modelName}</h4>
         <p className="text-gray-400">{car.categoryName}</p>
       </div>
       <div>
-        <img src={heroimage2} width={280} alt="" />
+        <img src={heroimage2} width={280} alt="" /> 
       </div>
       <div className="flex justify-around">
         <div className="flex items-center">
