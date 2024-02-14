@@ -8,4 +8,9 @@ export default class CarService {
   getByIdCar(id: number) {
     return axios.get("http://localhost:8080/api/v1/cars/getById?id=" + id);
   }
+
+  getByCategoryId(id: number) {
+    return axios.get(
+      "http://localhost:8080/api/v1/cars/getByCategoryId?categoryId=" + id);
+  }
 }

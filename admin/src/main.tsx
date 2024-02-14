@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/main-layout/MainLayout.tsx";
@@ -18,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               element: <Cars />,
             },
             {
-              path: "/tasks",
+              path: "/",
               element: <Cars />,
             },
           ],
