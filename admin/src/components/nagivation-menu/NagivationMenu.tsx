@@ -1,5 +1,4 @@
-import { AiOutlineProject } from "react-icons/ai";
-import { RiSettings5Line, RiTaskLine } from "react-icons/ri";
+import { RiTaskLine } from "react-icons/ri";
 import { RxDashboard } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 
