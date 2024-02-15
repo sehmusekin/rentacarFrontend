@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               element: <HomePage />,
             },
             {
-              path: "/tasks",
+              path: "/cars",
               element: <Cars />,
             },
           ],

@@ -16,31 +16,13 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Home</h3>
       </NavLink>
       <NavLink
-        to="/tasks"
+        to="/cars"
         className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
       >
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Tasks</h3>
-      </NavLink>
-      <NavLink
-        to="/projects"
-        className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
-      >
-        <div>
-          <AiOutlineProject className="w-6 h-6" />
-        </div>
-        <h3 className="text-lg">Projects</h3>
-      </NavLink>
-      <NavLink
-        to="/settings"
-        className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
-      >
-        <div>
-          <RiSettings5Line className="w-6 h-6" />
-        </div>
-        <h3 className="text-lg">Settings</h3>
+        <h3 className="text-lg">Cars</h3>
       </NavLink>
     </nav>
   );
