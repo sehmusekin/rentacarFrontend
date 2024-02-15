@@ -9,7 +9,6 @@ import {
   faGasPump,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { Car } from "../../models/responses/car/GetAllCarResponses";
 
 export default function CategoryList() {
 
