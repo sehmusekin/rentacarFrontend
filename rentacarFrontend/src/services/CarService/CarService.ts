@@ -13,4 +13,9 @@ export default class CarService {
     return axios.get(
       "http://localhost:8080/api/v1/cars/getByCategoryId?categoryId=" + id);
   }
+
+  getColorId(id: number) {
+    return axios.get(
+      "http://localhost:8080/api/v1/colors/getById?id=" + id);
+  }
 }

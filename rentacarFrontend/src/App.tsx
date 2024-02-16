@@ -8,6 +8,7 @@ import Rental from "./pages/Rental/Rental";
 import Contact from "./pages/Contact/Contact";
 import Login from "./components/Login";
 import CategoryList from "./pages/Category/CategoryList";
+import ColorList from "./pages/ColorList/ColorList";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path="/category-list/:id" element={<CategoryList />} />
+        <Route path="/color-list/:id" element={<ColorList />} />
       </Routes>
       <Footer />
     </>

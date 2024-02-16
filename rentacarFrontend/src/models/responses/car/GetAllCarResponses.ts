@@ -6,6 +6,7 @@ export interface Car  {
   kilometer: number;
   year: number;
   modelName: string;
+  colorId: number;
   colorName: string;
   fuelType: string;
   categoryId: number;

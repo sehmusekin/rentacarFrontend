@@ -12,20 +12,19 @@ import { Link } from "react-router-dom";
 import { Car } from "../../models/responses/car/GetAllCarResponses";
 
 export default function CategoryList() {
-
   const { id } = useParams();
-  const [cars, setCars] = useState<Car[]>([]); 
+  const [cars, setCars] = useState<Car[]>([]);
 
   useEffect(() => {
-    const categoryId = id ? parseInt(id, 10) : undefined;
+    const colorId = id ? parseInt(id, 10) : undefined;
 
-    if (categoryId !== undefined) {
+    if (colorId !== undefined) {
       let carService = new CarService();
       carService
-        .getByCategoryId(categoryId)
+        .getByCategoryId(colorId)
         .then((result) => setCars(result.data.data));
     } else {
-      console.error("Invalid category ID");
+      console.error("Invalid color ID");
     }
   }, []);
 
@@ -37,7 +36,7 @@ export default function CategoryList() {
           className="border bg-white w-full md:w-auto mx-auto md:mx-0 p-5 rounded-lg space-y-8"
         >
           <div>
-          <h4 className="font-bold">{car.brandName}</h4>
+            <h4 className="font-bold">{car.brandName}</h4>
             <h4 className="font-bold">{car.modelName}</h4>
             <p className="text-gray-400">{car.categoryName}</p>
           </div>
@@ -46,11 +45,17 @@ export default function CategoryList() {
           </div>
           <div className="flex justify-around">
             <div className="flex items-center">
-              <FontAwesomeIcon className="mr-1 text-gray-400" icon={faGasPump} />
+              <FontAwesomeIcon
+                className="mr-1 text-gray-400"
+                icon={faGasPump}
+              />
               <p className="text-sm text-gray-400">{car.fuelType}</p>
             </div>
             <div className="flex items-center">
-              <FontAwesomeIcon className="mr-1 text-gray-400" icon={faDroplet} />
+              <FontAwesomeIcon
+                className="mr-1 text-gray-400"
+                icon={faDroplet}
+              />
               <p className="text-sm text-gray-400">{car.colorName}</p>
             </div>
             <div className="flex items-center">
