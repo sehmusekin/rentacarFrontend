@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CategoryService from "../../../services/CategoryService/CategoryService";
+import { useNavigate } from "react-router-dom";
 
 export default function FilterSidebar() {
   interface Category {
@@ -7,30 +8,50 @@ export default function FilterSidebar() {
     name: string;
   }
 
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [sliderValue, setSliderValue] = useState(50);
-  const [category, setCategory] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     let categoryService = new CategoryService();
     categoryService
       .getAllCategories()
-      .then((result) => setCategory(result.data.data));
+      .then((result) => setCategories(result.data.data));
   }, []);
 
-  const handleSliderChange = (event: any) => {
-    setSliderValue(event.target.value);
+  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSliderValue(parseInt(event.target.value));
   };
-  console.log(category);
+
+  const handleCategoryClick = (id: number) => {
+    navigate(`/category-list/${id}`);
+    setSelectedCategory(id.toString());
+  };
+
   return (
     <div className="basis-1/4  text-gray-500 ">
       <div className="flex flex-wrap md:flex md:flex-col md:flex-nowrap md:space-y-10 bg-white p-5 rounded-lg">
         <div className="basis-1/2 flex flex-col space-y-2">
           <h4 className="text-xs text-gray-400 tracking-wider">TYPE</h4>
-          {category.map((category: Category) => (
+          {categories.map((category: Category) => (
             <div key={category.id} className="mb-4">
               <label className="block">
-                <input className="mr-2" type="checkbox" value={category.name} />
-                {category.name}
+            
+                <input
+                  className="mr-2"
+                  type="checkbox"
+                  value={category.id}
+                  onChange={() => handleCategoryClick(category.id)}
+                />
+                <span
+                  className={`cursor-pointer ${
+                    selectedCategory === category.name ? "font-bold" : ""
+                  }`}
+                >
+                  {category.name}
+                </span>
               </label>
             </div>
           ))}
