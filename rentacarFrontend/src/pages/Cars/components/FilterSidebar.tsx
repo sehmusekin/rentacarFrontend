@@ -3,17 +3,17 @@ import CategoryService from "../../../services/CategoryService/CategoryService";
 import { useNavigate } from "react-router-dom";
 import { Category } from "../../../models/responses/category/GetAllCategoryResponses";
 import ColorService from "../../../services/ColorService/ColorService";
+import { Color } from "../../../models/responses/color/GetAllColorResponses";
+import { FuelType } from "../../../models/responses/fuelType/GetAllFuelTypeResponses";
+import FuelTypeService from "../../../services/FuelTypeService/FuelTypeService";
 
 export default function FilterSidebar() {
-  interface Color {
-    id: number;
-    name: string;
-  }
 
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [sliderValue, setSliderValue] = useState(50);
   const [categories, setCategories] = useState<Category[]>([]);
   const [colors, setColors] = useState<Color[]>([]);
+  const [fuelTypes, setFuelTypes] = useState<FuelType[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,6 +26,13 @@ export default function FilterSidebar() {
     let colorService = new ColorService();
     colorService.getAllColors().then((result) => setColors(result.data.data));
   }, []);
+  useEffect(() => {
+    let fuelTypeService = new FuelTypeService();
+    fuelTypeService
+      .getAllFuelTypes()
+      .then((result) => setFuelTypes(result.data.data));
+  }
+  , []);
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSliderValue(parseInt(event.target.value));
@@ -37,6 +44,10 @@ export default function FilterSidebar() {
   };
   const handleColorClick = (id: number) => {
     navigate(`/color-list/${id}`);
+    setSelectedCategory(id.toString());
+  };
+  const handleFuelTypeClick = (id: number) => {
+    navigate(`/fuel-type-list/${id}`);
     setSelectedCategory(id.toString());
   };
 
@@ -103,22 +114,26 @@ export default function FilterSidebar() {
         </div>
         <div className="flex basis-1/2 flex-col space-y-2 mt-5 md:mt-0">
           <h3 className="text-xs text-gray-400 tracking-wider">FUEL</h3>
-          <label>
-            <input className="mr-2" type="checkbox" />
-            Gasoline
-          </label>
-          <label>
-            <input className="mr-2" type="checkbox" />
-            Diesel
-          </label>
-          <label>
-            <input className="mr-2" type="checkbox" />
-            LPG
-          </label>
-          <label>
-            <input className="mr-2" type="checkbox" />
-            Electricity
-          </label>
+          {fuelTypes.map((fuelType: FuelType) => (
+            <div key={fuelType.id} className="mb-4">
+              <label className="block">
+                <input
+                  className="mr-2"
+                  type="checkbox"
+                  value={fuelType.id}
+                  onChange={() => handleFuelTypeClick(fuelType.id)}
+                />
+                <span
+                  className={`cursor-pointer ${
+                    selectedCategory === fuelType.type ? "font-bold" : ""
+                  }`}
+                >
+                  {fuelType.type}
+                </span>
+              </label>
+            </div>
+          ))}
+          <label/>
         </div>
         <div className="flex flex-col mt-5 md:mt-5">
           <h3 className=" text-xs text-gray-400 tracking-wider">PRICE</h3>

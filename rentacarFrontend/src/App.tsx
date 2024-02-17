@@ -9,6 +9,7 @@ import Contact from "./pages/Contact/Contact";
 import Login from "./components/Login";
 import CategoryList from "./pages/Category/CategoryList";
 import ColorList from "./pages/ColorList/ColorList";
+import FuelTypeList from "./pages/FuelTypeList/FuelTypeList";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path="/category-list/:id" element={<CategoryList />} />
         <Route path="/color-list/:id" element={<ColorList />} />
+        <Route path="/fuel-type-list/:id" element={<FuelTypeList />} />
       </Routes>
       <Footer />
     </>
