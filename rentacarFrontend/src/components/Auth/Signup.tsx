@@ -1,38 +1,68 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Form, Formik } from "formik";
-import { object } from "yup";
-import './Signup.css';
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as Yup from "yup";
+
+import "./Signup.css";
 
 type Props = {};
 
-const Signup = (props: Props) => {
+interface SignupFormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  gsm: string;
+  username: string;
+  password: string;
+  authorities: string[];
+}
 
+const Signup = () => {
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    axios
-      .post("http://localhost:8080/api/v1/individualCustomers/add")
-      .then(
-        (response) => {
-          navigate("/login");
-        },
-        (error) => {
-          console.log(error.response.data);
-        }
+  const handleSignup = async (values: SignupFormValues) => {
+    try {
+      console.log("Form Values:", values);
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/auths/register",
+        values
       );
+      navigate("/login");
+    } catch (error: any) {
+      if (axios.isAxiosError(error) && error.response) {
+        console.log(error.response.data);
+      } else {
+        console.error("An unknown error occurred:", error);
+      }
+    }
   };
 
-  const initialValues = {
-    nationalityId: "",
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    gsm: Yup.string()
+      .matches(/^\d{11}$/, "Invalid GSM number")
+      .required("GSM is required"),
+    username: Yup.string().required("Username is required"),
+    password: Yup.string()
+      .min(8, "Password must be at least 8 characters")
+      .required("Password is required"),
+     authorities: Yup.array()
+       .of(Yup.string())
+     .required("Authorities are required"),
+  });
+
+  const initialValues: SignupFormValues = {
     firstName: "",
     lastName: "",
     email: "",
     gsm: "",
     username: "",
     password: "",
-    authorities: "ROLE_CUSTOMER",
-    customerType: "ROLE_INDIVIDUAL",
+    authorities: ["ROLE_ADMIN"],
   };
 
   return (
@@ -54,158 +84,159 @@ const Signup = (props: Props) => {
                 <Formik
                   initialValues={initialValues}
                   onSubmit={(values) => {
-                    handleSignup();
+                    console.log("Submitting form", values);
+                    handleSignup(values);
                   }}
-                  validationSchema={object({
-                  })}
+                  validationSchema={validationSchema}
                 >
-                  <Form className="space-y-4 md:space-y-6" action="#">
-                    <form className="space-y-4 md:space-y-6" action="#">
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Nationality ID
-                        </label>
-                        <input
-                          type="nationalityId"
-                          name="nationalityId"
-                          id="nationalityId"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder="12345678912"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="firstName"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Name
-                        </label>
-                        <input
-                          type="firstName"
-                          name="firstName"
-                          id="firstName"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder="John"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="firstName"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Surname
-                        </label>
-                        <input
-                          type="lastName"
-                          name="lastName"
-                          id="lastName"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder="Doe"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          placeholder="johndoe@mail.com"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="gsm"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          GSM
-                        </label>
-                        <input
-                          type="gsm"
-                          name="gsm"
-                          id="gsm"
-                          placeholder="05XXXXXXXXX"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="username"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Username
-                        </label>
-                        <input
-                          type="username"
-                          name="username"
-                          id="username"
-                          placeholder="johndoe"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="password"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          name="password"
-                          id="password"
-                          placeholder="••••••••"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="authorities"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Authorities
-                        </label>
-                        <input
-                          type="authorities"
-                          name="authorities"
-                          id="authorities"
-                          placeholder="ROLE_ADMIN"
-                          readOnly 
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="authorities"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Customer Type
-                        </label>
-                        <input
-                          type="customerType"
-                          name="customerType"
-                          id="customerType"
-                          placeholder="ROLE_INDIVIDUAL"
-                          readOnly 
-                          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        />
-                      </div>
-                      {/* <div>
+                  <Form className="space-y-4 md:space-y-6">
+                    <div>
+                      <label
+                        htmlFor="firstName"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Name
+                      </label>
+                      <Field
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="John"
+                      />
+                      <ErrorMessage name="firstName">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="firstName"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Surname
+                      </label>
+                      <Field
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Doe"
+                        
+                      />
+                       <ErrorMessage name="lastName">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Email
+                      </label>
+                      <Field
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="johndoe@mail.com"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                       <ErrorMessage name="email">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                      
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="gsm"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        GSM
+                      </label>
+                      <Field
+                        type="tel"
+                        name="gsm"
+                        id="gsm"
+                        placeholder="05XXXXXXXXX"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                       <ErrorMessage name="gsm">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="username"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Username
+                      </label>
+                      <Field
+                        type="text"
+                        name="username"
+                        id="username"
+                        placeholder="johndoe"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                       <ErrorMessage name="username">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="password"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Password
+                      </label>
+                      <Field
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="••••••••"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                      <ErrorMessage name="password">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    {/* <div>
+                      <label
+                        htmlFor="authorities"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Authorities
+                      </label>
+                      <Field
+                        type="text"
+                        name="authorities"
+                        id="authorities"
+                        placeholder="ROLE_ADMIN"
+                        readOnly
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                    </div> */}
+
+                    {/* <div>
                   <label
                     htmlFor="confirm-password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Confirm password
                   </label>
-                  <input
+                  <Field
                     type="confirm-password"
                     name="confirm-password"
                     id="confirm-password"
@@ -214,55 +245,54 @@ const Signup = (props: Props) => {
                   />
                 </div> */}
 
-                      <div className="flex items-start">
-                        <div className="flex items-center h-5">
-                          <input
-                            id="terms"
-                            aria-describedby="terms"
-                            type="checkbox"
-                            className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                          />
-                        </div>
-                        <div className="ml-3 text-sm">
-                          <label
-                            htmlFor="terms"
-                            className="font-light text-gray-500 dark:text-gray-300"
+                    <div className="flex items-start">
+                      {/* <div className="flex items-center h-5">
+                        <Field
+                          id="terms"
+                          aria-describedby="terms"
+                          type="checkbox"
+                          className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                        />
+                      </div> */}
+                      {/* <div className="ml-3 text-sm">
+                        <label
+                          htmlFor="terms"
+                          className="font-light text-gray-500 dark:text-gray-300"
+                        >
+                          I accept the{" "}
+                          <a
+                            className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                            href="#"
                           >
-                            I accept the{" "}
-                            <a
-                              className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                              href="#"
-                            >
-                              Terms and Conditions
-                            </a>
-                          </label>
-                        </div>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                            Terms and Conditions
+                          </a>
+                        </label>
+                      </div> */}
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    >
+                      Create an account
+                    </button>
+                    <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Already have an account?{" "}
+                      <a
+                        href="#"
+                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       >
-                        Create an account
-                      </button>
-                      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Already have an account?{" "}
-                        <a
-                          href="#"
-                          className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        >
-                          Login here
-                        </a>
-                      </p>
-                      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Are you a corporate customer?{" "}
-                        <a
-                          href="#"
-                          className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        >
-                          Click here
-                        </a>
-                      </p>
-                    </form>
+                        Login here
+                      </a>
+                    </p>
+                    <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Are you a corporate customer?{" "}
+                      <a
+                        href="#"
+                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      >
+                        Click here
+                      </a>
+                    </p>
                   </Form>
                 </Formik>
               </div>
