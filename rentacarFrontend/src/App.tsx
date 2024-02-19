@@ -6,10 +6,11 @@ import Cars from "./pages/Cars/Cars";
 import CarDetails from "./pages/CarDetails/CarDetails";
 import Rental from "./pages/Rental/Rental";
 import Contact from "./pages/Contact/Contact";
-import Login from "./components/Login";
+import Login from "./components/Auth/Login";
 import CategoryList from "./pages/Category/CategoryList";
 import ColorList from "./pages/ColorList/ColorList";
 import FuelTypeList from "./pages/FuelTypeList/FuelTypeList";
+import Signup from "./components/Auth/Signup";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/rental" element={<Rental />} />
         <Route path="/contact" element={<Contact />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} /> 
         <Route path="/category-list/:id" element={<CategoryList />} />
         <Route path="/color-list/:id" element={<ColorList />} />
         <Route path="/fuel-type-list/:id" element={<FuelTypeList />} />

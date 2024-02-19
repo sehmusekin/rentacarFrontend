@@ -63,7 +63,21 @@ function Contact() {
                 icon={faEnvelope}
                 className="text-gray-500 text-xl mr-4"
               />
-              <p>pair2rentacar@gmail.com</p>
+              <p>harnylmzz@outlook.com</p>
+            </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="text-gray-500 text-xl mr-4"
+              />
+              <p>tanerdokmets@gmail.com</p>
+            </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="text-gray-500 text-xl mr-4"
+              />
+              <p>sehmusekin17@gmail.com</p>
             </div>
             <div className="text-gray-500 text-xl space-x-10">
               <FontAwesomeIcon icon={faInstagram} />

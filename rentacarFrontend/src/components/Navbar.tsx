@@ -19,6 +19,11 @@ function Navbar() {
     setLogin(false);
   };
 
+  const handleSignup = () => {
+    console.log("handleSignup called");
+    navigate("/signup");
+  };
+  
   return (
     <>
       <nav className="bg-white px-1 lg:px-0 ">
@@ -119,7 +124,7 @@ function Navbar() {
                     Login
                   </button>
                 )}
-                <button className="font-bold">Sign Up</button>
+               <button onClick={handleSignup} className="font-bold">Sign Up</button>
               </div>
             </div>
           </div>
