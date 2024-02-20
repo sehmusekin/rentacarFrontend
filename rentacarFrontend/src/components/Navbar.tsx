@@ -23,7 +23,7 @@ function Navbar() {
     console.log("handleSignup called");
     navigate("/signup");
   };
-  
+
   return (
     <>
       <nav className="bg-white px-1 lg:px-0 ">
@@ -61,7 +61,7 @@ function Navbar() {
                       Login
                     </button>
                   )}
-                  {!isLogin && <button className="font-bold">Sign Up</button>}
+                  <Link to="/signup">Sign Up</Link>
                 </div>
               </div>
             </div>
@@ -124,7 +124,9 @@ function Navbar() {
                     Login
                   </button>
                 )}
-               <button onClick={handleSignup} className="font-bold">Sign Up</button>
+                <button onClick={handleSignup} className="font-bold">
+                  Sign Up
+                </button>
               </div>
             </div>
           </div>
