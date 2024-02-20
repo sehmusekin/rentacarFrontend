@@ -1,29 +1,22 @@
 .signup-container {
-  overflow: auto;
+  padding: 110px;
+  height: 140vh;
+}
+.input-field {
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 0px;
+  border-color: #3498db;
+  outline: none;
 }
 
-form {
-  padding: 10px;
-}
-
-input,
-label {
-  font-size: 10px;
-}
-
-input {
-  width: calc(100% - 20px);
-  margin-bottom: 10px;
-}
-
-@media (max-width: 600px) {
-  input,
-  label {
-    font-size: 10px;
-    padding: 6px;
-  }
-
-  input {
-    width: calc(100% - 12px); /* Adjusted width */
-  }
+/* Error message styling */
+.text-danger {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }

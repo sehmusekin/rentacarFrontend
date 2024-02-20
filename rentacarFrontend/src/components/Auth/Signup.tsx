@@ -50,9 +50,9 @@ const Signup = () => {
     password: Yup.string()
       .min(8, "Password must be at least 8 characters")
       .required("Password is required"),
-     authorities: Yup.array()
-       .of(Yup.string())
-     .required("Authorities are required"),
+    authorities: Yup.array()
+      .of(Yup.string())
+      .required("Authorities are required"),
   });
 
   const initialValues: SignupFormValues = {
@@ -68,18 +68,12 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div>
-        <section className="bg-gray-50 dark:bg-gray-900">
+        <section className="bg-gray-95050 divide-amber-300k:bg-gray-900">
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a
-              href="#"
-              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-            >
-              HTS Wheels
-            </a>
             <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Create and account
+                  Create account
                 </h1>
                 <Formik
                   initialValues={initialValues}
@@ -101,7 +95,7 @@ const Signup = () => {
                         type="text"
                         name="firstName"
                         id="firstName"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="input-field"
                         placeholder="John"
                       />
                       <ErrorMessage name="firstName">
@@ -121,11 +115,10 @@ const Signup = () => {
                         type="text"
                         name="lastName"
                         id="lastName"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="input-field"
                         placeholder="Doe"
-                        
                       />
-                       <ErrorMessage name="lastName">
+                      <ErrorMessage name="lastName">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -143,14 +136,13 @@ const Signup = () => {
                         name="email"
                         id="email"
                         placeholder="johndoe@mail.com"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="input-field"
                       />
-                       <ErrorMessage name="email">
+                      <ErrorMessage name="email">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
                       </ErrorMessage>
-                      
                     </div>
                     <div>
                       <label
@@ -164,9 +156,8 @@ const Signup = () => {
                         name="gsm"
                         id="gsm"
                         placeholder="05XXXXXXXXX"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      />
-                       <ErrorMessage name="gsm">
+                        className="input-field"                      />
+                      <ErrorMessage name="gsm">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -184,9 +175,8 @@ const Signup = () => {
                         name="username"
                         id="username"
                         placeholder="johndoe"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      />
-                       <ErrorMessage name="username">
+                        className="input-field"                      />
+                      <ErrorMessage name="username">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -204,8 +194,7 @@ const Signup = () => {
                         name="password"
                         id="password"
                         placeholder="••••••••"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      />
+                        className="input-field"                      />
                       <ErrorMessage name="password">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -273,7 +262,7 @@ const Signup = () => {
                       type="submit"
                       className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                     >
-                      Create an account
+                      Create account
                     </button>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account?{" "}

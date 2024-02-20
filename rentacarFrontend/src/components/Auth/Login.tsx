@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Login.css";
 
 const Login = () => {
   const authContext = useContext(AuthContext);
@@ -62,7 +63,7 @@ const Login = () => {
     navigate("/login");
   };
   return (
-    <div>
+    <div className="login-container">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -70,10 +71,7 @@ const Login = () => {
       >
         <Form className="max-w-sm mx-auto">
           <div className="mb-5">
-            <label
-              htmlFor="username"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-            >
+            <label htmlFor="username" className="label-text">
               Your username
             </label>
             <Field
@@ -81,19 +79,16 @@ const Login = () => {
               id="username"
               name="username"
               placeholder="Write your username here "
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="input-field"
             />
             <ErrorMessage
               name="username"
               component="div"
-              className="text-red-500 text-sm"
+              className="error-message"
             />
           </div>
           <div className="mb-5">
-            <label
-              htmlFor="password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-            >
+            <label htmlFor="password" className="label-text">
               Your password
             </label>
             <Field
@@ -101,12 +96,12 @@ const Login = () => {
               id="password"
               name="password"
               placeholder="******** "
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="input-field"
             />
             <ErrorMessage
               name="password"
               component="div"
-              className="text-red-500 text-sm"
+              className="error-message"
             />
           </div>
           <div className="flex items-start mb-5">
@@ -114,7 +109,7 @@ const Login = () => {
               type="checkbox"
               id="remember"
               name="remember"
-              className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+              className="checkbox-field"
             />
             <label
               htmlFor="remember"
@@ -125,7 +120,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="w-full px-4 py-2 text-sm font-medium tracking-wider text-white uppercase bg-gray-500 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
           >
             Login
           </button>
