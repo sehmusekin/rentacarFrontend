@@ -11,6 +11,7 @@ import CategoryList from "./pages/Category/CategoryList";
 import ColorList from "./pages/ColorList/ColorList";
 import FuelTypeList from "./pages/FuelTypeList/FuelTypeList";
 import Signup from "./components/Auth/Signup";
+import CorporateCustomerSignup from "./components/Auth/CorporateCustomerSignUp";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} /> 
+        <Route path='/company-signup' element={<CorporateCustomerSignup />} /> 
         <Route path="/category-list/:id" element={<CategoryList />} />
         <Route path="/color-list/:id" element={<ColorList />} />
         <Route path="/fuel-type-list/:id" element={<FuelTypeList />} />

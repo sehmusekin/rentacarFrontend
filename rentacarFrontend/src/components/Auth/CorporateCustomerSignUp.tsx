@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-import "./Signup.css";
+import "./CorporateCustomerSignup.css";
 
 type Props = {};
 
 interface SignupFormValues {
-  nationalityId: string;
-  firstName: string;
-  lastName: string;
+  companyName: string;
+  taxNumber: string;
   email: string;
   gsm: string;
   username: string;
@@ -26,7 +25,7 @@ const Signup = () => {
     try {
       console.log("Form Values:", values);
       const response = await axios.post(
-        "http://localhost:8080/api/v1/individualCustomers/add",
+        "http://localhost:8080/api/v1/corporateCustomers/add",
         values
       );
       navigate("/login");
@@ -40,10 +39,8 @@ const Signup = () => {
   };
 
   const validationSchema = Yup.object({
-    nationalityId: Yup.string().required("Nationality ID is required")
-    .matches(/^\d{11}$/, "Invalid Nationality ID"),
-    firstName: Yup.string().required("First name is required"),
-    lastName: Yup.string().required("Last name is required"),
+    companyName: Yup.string().required("Company name is required"),
+    taxNumber: Yup.string().required("Tax number is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
@@ -60,16 +57,14 @@ const Signup = () => {
   });
 
   const initialValues: SignupFormValues = {
-    nationalityId: "",
-    firstName: "",
-    lastName: "",
+    companyName: "",
+    taxNumber: "",
     email: "",
     gsm: "",
     username: "",
     password: "",
     // authorities: ["ROLE_CUSTOMER"],
     // customerType: "INDIVIDUAL_CUSTOMER"
-
   };
 
   return (
@@ -91,21 +86,21 @@ const Signup = () => {
                   validationSchema={validationSchema}
                 >
                   <Form className="space-y-4 md:space-y-6">
-                  <div>
+                    <div>
                       <label
-                        htmlFor="nationalityId"
+                        htmlFor="companyName"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Nationality ID
+                        Company name
                       </label>
                       <Field
                         type="text"
-                        name="nationalityId"
-                        id="nationalityId"
+                        name="companyName"
+                        id="companyName"
                         className="input-field"
-                        placeholder="12345678900"
+                        placeholder="Your company name"
                       />
-                      <ErrorMessage name="nationalityId">
+                      <ErrorMessage name="companyName">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -113,39 +108,19 @@ const Signup = () => {
                     </div>
                     <div>
                       <label
-                        htmlFor="firstName"
+                        htmlFor="taxNumber"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Name
+                        Tax number
                       </label>
                       <Field
                         type="text"
-                        name="firstName"
-                        id="firstName"
+                        name="taxNumber"
+                        id="taxNumber"
                         className="input-field"
-                        placeholder="John"
+                        placeholder="1234567890"
                       />
-                      <ErrorMessage name="firstName">
-                        {(message) => (
-                          <span className="text-danger">{message}</span>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lastName"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Surname
-                      </label>
-                      <Field
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        className="input-field"
-                        placeholder="Doe"
-                      />
-                      <ErrorMessage name="lastName">
+                      <ErrorMessage name="taxNumber">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -183,7 +158,8 @@ const Signup = () => {
                         name="gsm"
                         id="gsm"
                         placeholder="05XXXXXXXXX"
-                        className="input-field"                      />
+                        className="input-field"
+                      />
                       <ErrorMessage name="gsm">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -201,8 +177,9 @@ const Signup = () => {
                         type="text"
                         name="username"
                         id="username"
-                        placeholder="johndoe"
-                        className="input-field"                      />
+                        placeholder="Your username"
+                        className="input-field"
+                      />
                       <ErrorMessage name="username">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -221,7 +198,8 @@ const Signup = () => {
                         name="password"
                         id="password"
                         placeholder="••••••••"
-                        className="input-field"                      />
+                        className="input-field"
+                      />
                       <ErrorMessage name="password">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -262,7 +240,7 @@ const Signup = () => {
                 </div> */}
 
                     {/* <div className="flex items-start"> */}
-                      {/* <div className="flex items-center h-5">
+                    {/* <div className="flex items-center h-5">
                         <Field
                           id="terms"
                           aria-describedby="terms"
@@ -270,7 +248,7 @@ const Signup = () => {
                           className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                         />
                       </div> */}
-                      {/* <div className="ml-3 text-sm">
+                    {/* <div className="ml-3 text-sm">
                         <label
                           htmlFor="terms"
                           className="font-light text-gray-500 dark:text-gray-300"
@@ -298,15 +276,6 @@ const Signup = () => {
                         className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       >
                         Login here
-                      </a>
-                    </p>
-                    <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Do you have a company?{" "}
-                      <a
-                        href="/company-signup"
-                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                      >
-                        Click here
                       </a>
                     </p>
                   </Form>
