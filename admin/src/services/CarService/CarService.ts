@@ -6,6 +6,6 @@ export default class CarService {
   }
 
 getDelete(){
-  return axios.post("http://localhost:8080/api/v1/cars/delete/${carId}");
+  return axios.delete("http://localhost:8080/api/v1/cars/delete");
 }
 }
