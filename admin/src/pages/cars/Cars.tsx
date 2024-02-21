@@ -21,11 +21,11 @@ function Cars() {
   }, []);
 
   return (
-    <>
+    <div className=" w-1/2 gap-10 mx-auto">
       {cars.map((car, index) => (
         <CarList car={car} key={index} />
       ))}
-    </>
+    </div>
   );
 }
 

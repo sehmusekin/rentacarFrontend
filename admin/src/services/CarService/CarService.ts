@@ -5,12 +5,7 @@ export default class CarService {
     return axios.get("http://localhost:8080/api/v1/cars/getAll");
   }
 
-  getByIdCar(id: number) {
-    return axios.get("http://localhost:8080/api/v1/cars/getById?id=" + id);
-  }
-
-  getByCategoryId(id: number) {
-    return axios.get(
-      "http://localhost:8080/api/v1/cars/getByCategoryId?categoryId=" + id);
-  }
+getDelete(){
+  return axios.post("http://localhost:8080/api/v1/cars/delete/${carId}");
+}
 }
