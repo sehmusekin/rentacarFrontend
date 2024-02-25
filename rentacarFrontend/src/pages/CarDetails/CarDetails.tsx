@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import heroimage from "/images/heroImage/heroimage1.png";
+import logo from "/images/logo/logo.png";
 import { Car } from "../../models/responses/car/GetAllCarResponses";
 import CarService from "../../services/CarService/CarService";
 function CarDetail() {
@@ -28,22 +29,25 @@ function CarDetail() {
         <div className=" basis-1/2 bg-slate-700 rounded-lg">
           <div className="flex flex-col justify-around h-full  space-y-6 p-5">
             <h3 className="font-bold text-white text-xl md:text-3xl w-full md:w-1/2">
-              Sports car with the best design and acceleration
+              Where Elegance Meets Performance
             </h3>
             <p className="text-white text-sm  md:text-lg font-semibold">
-              Safety and comfort while driving a futuristic and elegant sports
-              car
+              Are you ready to elevate your driving experience to new heights?
+              Look no further than HTS-Wheels, where sophistication, speed, and
+              safety converge in the world of luxury cars. Elevate your driving
+              with HTS-Wheels and make every journey a memorable celebration of
+              automotive excellence.
             </p>
 
-            <img src={heroimage} width={500} />
+            <img src={"/images/logo/logo.png"} width={400}/>
           </div>
         </div>
         <div className="text-sm md:text-lg basis-1/2 bg-white rounded-lg p-5 space-y-5 mt-5 md:mt-0">
           <h3 className="font-extrabold text-xl md:text-2xl ">
-           {carDetail?.modelName}
+            {carDetail?.modelName}
           </h3>
           <p className="leading-relaxed text-gray-400 font-semibold text-xs md:text-base">
-          {/* {carDetail?.description} */} Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ex ipsum dolores, totam at voluptas.
+            {carDetail?.description}
           </p>
           <div className="flex flex-col justify-start space-y-1 w-full md:w-2/3 font-semibold">
             <p className="flex justify-between">

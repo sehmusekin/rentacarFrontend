@@ -24,6 +24,12 @@ function Navbar() {
     navigate("/signup");
   };
 
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+
+  const toggleProfileMenu = () => {
+    setProfileMenuOpen(!isProfileMenuOpen);
+  };
+
   return (
     <>
       <nav className="bg-white px-1 lg:px-0 ">
@@ -54,14 +60,36 @@ function Navbar() {
                       Logout
                     </button>
                   ) : (
-                    <button
-                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
-                      onClick={handleLogin}
-                    >
-                      Login
-                    </button>
+                    <>
+                      <button
+                        className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
+                        onClick={handleLogin}
+                      >
+                        Login
+                      </button>
+                      <Link to="/signup">Sign Up</Link>
+                    </>
                   )}
-                  <Link to="/signup">Sign Up</Link>
+                  {isLogin && (
+                    <div>
+                      <button
+                        className="border bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white rounded-lg font-bold"
+                        onClick={toggleProfileMenu}
+                      >
+                        <Link to="/profile">Profile</Link>
+                      </button>
+                      {isProfileMenuOpen && (
+                        <div className="absolute top-16 right-0 bg-white border border-gray-300 rounded-lg shadow-md">
+                          <button
+                            onClick={handleLogout}
+                            className="block px-4 py-2 text-gray-800"
+                          >
+                            Logout
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -117,16 +145,36 @@ function Navbar() {
                     Logout
                   </button>
                 ) : (
-                  <button
-                    className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
-                    onClick={handleLogin}
-                  >
-                    Login
-                  </button>
+                  <>
+                    <button
+                      className="border bg-gradient-to-r from-blue-300 via-cyan-700 to-blue-900 px-6 py-2 text-white rounded-lg font-bold "
+                      onClick={handleLogin}
+                    >
+                      Login
+                    </button>
+                    <Link to="/signup">Sign Up</Link>
+                  </>
                 )}
-                <button onClick={handleSignup} className="font-bold">
-                  Sign Up
-                </button>
+                {isLogin && (
+                  <div>
+                    <button
+                      className="border bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white rounded-lg font-bold"
+                      onClick={toggleProfileMenu}
+                    >
+                      <Link to="/profile">Profile</Link>
+                    </button>
+                    {isProfileMenuOpen && (
+                      <div className="absolute top-16 right-0 bg-white border border-gray-300 rounded-lg shadow-md">
+                        <button
+                          onClick={handleLogout}
+                          className="block px-4 py-2 text-gray-800"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
