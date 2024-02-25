@@ -2,7 +2,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-
 import "./Signup.css";
 
 type Props = {};
@@ -73,7 +72,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="signup-container" style={{ padding: '110px', height: '140vh' }}>
       <div>
         <section>
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
