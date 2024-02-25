@@ -1,6 +1,3 @@
-import PaymentPage from "../../components/Payments/Payment";
-
-
 function Rental() {
   return (
     <div className="flex gap-10 my-10 justify-center">
@@ -158,7 +155,7 @@ function Rental() {
         </div>
       </div>
       <div>
-        <div className="bg-white w-[631px] h-[600px] p-6 rounded-lg">
+        <div className="bg-white w-[631px] h-[430px] p-6 rounded-lg">
           <h4 className="text-lg font-bold">Rental Summary</h4>
           <p className="text-gray-400">
             Prices may change depending on the length of the rental and the
@@ -168,22 +165,13 @@ function Rental() {
             <div>
               <img src="" alt="" />
             </div>
-            <div>
-              <p className="font-bold text-xl">VVV</p>
-              <p className="text-gray-700 font-medium">VVV Kilometer</p>
-              <p className="text-gray-700 font-medium">V Fuel Type</p>
-              <p className="text-gray-700 font-medium">Year</p>
-              <p className="text-gray-700 font-medium">WWW</p>
-            </div>
+            
           </div>
           <div className="flex justify-between">
             <h6 className="text-gray-400">Subtotal</h6>
-            <p className="font-bold">$1.00</p>
+            <p className="font-bold">$200.00</p>
           </div>
-          <div className="flex justify-between">
-            <h6 className="text-gray-400">Tax</h6>
-            <p className="font-bold">0</p>
-          </div>
+
           <hr className="my-6" />
           <div className="w-full mt-6">
             <input
@@ -200,7 +188,7 @@ function Rental() {
               <h4 className="font-bold text-base">Total Rental Price</h4>
               <p className="text-gray-400">Overall price rental</p>
             </div>
-            <div className="font-bold">$1</div>
+            <div className="font-bold">$200</div>
           </div>
         </div>
 
@@ -259,7 +247,6 @@ function Rental() {
           </div>
         </div>
       </div>
-      <PaymentPage />
     </div>
   );
 }

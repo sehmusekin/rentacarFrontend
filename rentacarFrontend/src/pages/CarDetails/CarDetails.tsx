@@ -57,7 +57,8 @@ function CarDetail() {
               {carDetail?.categoryName}
             </p>
             <p className="flex justify-between">
-              <span className="text-gray-400">Capacity</span> 2 Person
+              <span className="text-gray-400">Capacity</span>
+              {carDetail?.numberOfSeats} Person
             </p>
             <p className="flex justify-between">
               <span className="text-gray-400 ">Steering</span> Manual
