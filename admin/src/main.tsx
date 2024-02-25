@@ -8,6 +8,7 @@ import HomePage from "./pages/homepage/HomePage.tsx";
 import CarsUpdated from "./pages/cars/CarsUpdated.tsx";
 import CarsAdd from "./pages/cars/CarsAdd.tsx";
 import BrandsAdd from "./pages/brands/BrandsAdd.tsx";
+import FuelTypesAdd from "./pages/FuelType/FuelTypesAdd.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -26,16 +27,20 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             },
 
             {
-              path: "/cars-added",
+              path: "/cars-add",
               element: <CarsAdd />,
             },
             {
-              path: "/cars-updated",
+              path: "/cars-update",
               element: <CarsUpdated />,
             },
              {
-              path: "/brand-added",
+              path: "/brand-add",
               element: <BrandsAdd />,
+            },
+            {
+              path: "/fuel-type-add",
+              element: <FuelTypesAdd />,
             },
           ],
         },

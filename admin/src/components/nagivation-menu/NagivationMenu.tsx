@@ -15,13 +15,22 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Home</h3>
       </NavLink>
       <NavLink
-        to="/brand-added"
+        to="/brand-add"
         className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
       >
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
         <h3 className="text-lg">Brand Add</h3>
+      </NavLink>
+      <NavLink
+        to="/fuel-type-add"
+        className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Fuel Type Add</h3>
       </NavLink>
       <NavLink
         to="/cars"
@@ -33,7 +42,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Cars</h3>
       </NavLink>
       <NavLink
-        to="/cars-updated"
+        to="/cars-update"
         className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
       >
         <div>
@@ -42,7 +51,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Car Updated</h3>
       </NavLink>
       <NavLink
-        to="/cars-added"
+        to="/cars-add"
         className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
       >
         <div>
