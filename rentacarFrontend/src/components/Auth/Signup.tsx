@@ -14,6 +14,7 @@ interface SignupFormValues {
   gsm: string;
   username: string;
   password: string;
+  confirmPassword: string;
   // authorities: string[];
   // customerType: string;
 }
@@ -39,8 +40,9 @@ const Signup = () => {
   };
 
   const validationSchema = Yup.object({
-    nationalityId: Yup.string().required("Nationality ID is required")
-    .matches(/^\d{11}$/, "Invalid Nationality ID"),
+    nationalityId: Yup.string()
+      .required("Nationality ID is required")
+      .matches(/^\d{11}$/, "Invalid Nationality ID"),
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
     email: Yup.string()
@@ -53,6 +55,9 @@ const Signup = () => {
     password: Yup.string()
       .min(8, "Password must be at least 8 characters")
       .required("Password is required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), undefined], "Passwords must match")
+      .required("Password confirmation is required"),
     // authorities: Yup.array()
     //   .of(Yup.string())
     //   .required("Authorities are required"),
@@ -66,13 +71,16 @@ const Signup = () => {
     gsm: "",
     username: "",
     password: "",
+    confirmPassword: "",
     // authorities: ["ROLE_CUSTOMER"],
     // customerType: "INDIVIDUAL_CUSTOMER"
-
   };
 
   return (
-    <div className="signup-container" style={{ padding: '110px', height: '140vh' }}>
+    <div
+      className="signup-container"
+      style={{ padding: "175px", height: "155vh" }}
+    >
       <div>
         <section>
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -90,7 +98,7 @@ const Signup = () => {
                   validationSchema={validationSchema}
                 >
                   <Form className="space-y-4 md:space-y-6">
-                  <div>
+                    <div>
                       <label
                         htmlFor="nationalityId"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -182,7 +190,8 @@ const Signup = () => {
                         name="gsm"
                         id="gsm"
                         placeholder="05XXXXXXXXX"
-                        className="input-field"                      />
+                        className="input-field"
+                      />
                       <ErrorMessage name="gsm">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -201,7 +210,8 @@ const Signup = () => {
                         name="username"
                         id="username"
                         placeholder="johndoe"
-                        className="input-field"                      />
+                        className="input-field"
+                      />
                       <ErrorMessage name="username">
                         {(message) => (
                           <span className="text-danger">{message}</span>
@@ -220,8 +230,29 @@ const Signup = () => {
                         name="password"
                         id="password"
                         placeholder="••••••••"
-                        className="input-field"                      />
+                        className="input-field"
+                      />
                       <ErrorMessage name="password">
+                        {(message) => (
+                          <span className="text-danger">{message}</span>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="confirmPassword"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Confirm password
+                      </label>
+                      <Field
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        placeholder="••••••••"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      />
+                      <ErrorMessage name="confirmPassword">
                         {(message) => (
                           <span className="text-danger">{message}</span>
                         )}
@@ -244,24 +275,8 @@ const Signup = () => {
                       />
                     </div> */}
 
-                    {/* <div>
-                  <label
-                    htmlFor="confirm-password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Confirm password
-                  </label>
-                  <Field
-                    type="confirm-password"
-                    name="confirm-password"
-                    id="confirm-password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                </div> */}
-
                     {/* <div className="flex items-start"> */}
-                      {/* <div className="flex items-center h-5">
+                    {/* <div className="flex items-center h-5">
                         <Field
                           id="terms"
                           aria-describedby="terms"
@@ -269,7 +284,7 @@ const Signup = () => {
                           className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                         />
                       </div> */}
-                      {/* <div className="ml-3 text-sm">
+                    {/* <div className="ml-3 text-sm">
                         <label
                           htmlFor="terms"
                           className="font-light text-gray-500 dark:text-gray-300"
@@ -286,10 +301,11 @@ const Signup = () => {
                     {/* </div> */}
                     <button
                       type="submit"
-                      className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                      className="w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                     >
                       Create account
                     </button>
+
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account?{" "}
                       <a
