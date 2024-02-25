@@ -39,7 +39,10 @@ function CarDetail() {
               automotive excellence.
             </p>
 
-            <img src={"/images/logo/logo.png"} width={400}/>
+            <img
+              className="w-full object-cover h-[100px] rounded-lg"
+              src={"/images/logo/logo.png"}
+            />
           </div>
         </div>
         <div className="text-sm md:text-lg basis-1/2 bg-white rounded-lg p-5 space-y-5 mt-5 md:mt-0">
