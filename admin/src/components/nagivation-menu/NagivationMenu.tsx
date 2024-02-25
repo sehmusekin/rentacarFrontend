@@ -15,6 +15,15 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Home</h3>
       </NavLink>
       <NavLink
+        to="/brand-added"
+        className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Brand Add</h3>
+      </NavLink>
+      <NavLink
         to="/cars"
         className="flex items-center gap-4 text-gray-400 p-2 rounded-lg hover:text-white hover:bg-sky-900 transition-all transition-duration: 250ms;"
       >
@@ -30,7 +39,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Cars Updated</h3>
+        <h3 className="text-lg">Car Updated</h3>
       </NavLink>
       <NavLink
         to="/cars-added"
@@ -39,8 +48,10 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Cars Add</h3>
+        <h3 className="text-lg">Car Add</h3>
       </NavLink>
+    
+      
     </nav>
   );
 };

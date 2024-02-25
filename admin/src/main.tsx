@@ -5,8 +5,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/main-layout/MainLayout.tsx";
 import Cars from "./pages/cars/Cars.tsx";
 import HomePage from "./pages/homepage/HomePage.tsx";
-import CarsAdd from "./pages/cars-added/CarsAdd.tsx";
-import CarsUpdated from "./pages/cars-updated/CarsUpdated.tsx";
+import CarsUpdated from "./pages/cars/CarsUpdated.tsx";
+import CarsAdd from "./pages/cars/CarsAdd.tsx";
+import BrandsAdd from "./pages/brands/BrandsAdd.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -31,6 +32,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "/cars-updated",
               element: <CarsUpdated />,
+            },
+             {
+              path: "/brand-added",
+              element: <BrandsAdd />,
             },
           ],
         },
