@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import heroimage from "/images/heroImage/heroimage1.png";
 import logo from "/images/logo/logo.png";
 import { Car } from "../../models/responses/car/GetAllCarResponses";
 import CarService from "../../services/CarService/CarService";
@@ -41,7 +40,7 @@ function CarDetail() {
 
             <img
               className="w-full object-cover h-[100px] rounded-lg"
-              src={"/images/logo/logo.png"}
+              src={logo}
             />
           </div>
         </div>
