@@ -26,6 +26,7 @@ function Cars() {
     setShowAllCars(true);
   };
 
+  console.log(cars)
   return (
     <div className="flex flex-col">
       <div className="flex-col md:flex md:flex-row justify-center md:gap-4 p-5">
