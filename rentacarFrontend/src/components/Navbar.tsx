@@ -3,11 +3,6 @@ import { useState, useEffect } from "react";
 
 function Navbar() {
   const [isClick, setIsClick] = useState(false);
-  
-
-  const toggleNavbar = () => {
-    setIsClick(!isClick);
-  };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -43,7 +38,7 @@ function Navbar() {
               <a href="#">Locations</a>
               <a href="#">Services</a>
               <Link to="/contact">Contact</Link>
-              <Link to="/cars">Rental Now</Link>
+              {isLoggedIn && <Link to="/cars">Rental Now</Link>}
               <div className="flex items-center space-x-3">
                 {isLoggedIn ? (
                   <>
@@ -108,7 +103,7 @@ function Navbar() {
       </div>
       <div className="md:hidden flex items-center">
         <button
-          onClick={toggleNavbar}
+          onClick={() => setIsClick(!isClick)}
           className="inleni-flex items-center justify-center p-2 rounded-md"
         >
           {isClick ? (
@@ -159,10 +154,11 @@ function Navbar() {
             <Link className="block rounded:lg p-2 font-bold" to="/contact">
               Contact
             </Link>
-            <Link className="block rounded:lg p-2 font-bold" to="/cars">
-              Rental Now
-            </Link>
-            
+            {isLoggedIn && (
+              <Link className="block rounded:lg p-2 font-bold" to="/cars">
+                Rental Now
+              </Link>
+            )}
           </div>
         </div>
       )}
