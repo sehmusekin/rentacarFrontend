@@ -1,9 +1,9 @@
 const HomePage = () => {
   return (
     <div>
-      <h1 className="font-bold text-2xl">Welcome</h1>
+      <h1 className="font-bold text-2xl">Hoşgeldiniz</h1>
       <p className="text-xl mt-6 ">
-        This application is HTS-WHEELS admin panel
+        HTS-Wheels admin paneline hoşgeldiniz. Bu panel üzerinden araçlarınızı ve markalarınızı yönetebilirsiniz.
       </p>
     </div>
   );

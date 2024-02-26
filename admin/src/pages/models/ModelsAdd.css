@@ -1,4 +1,4 @@
-.brand-add-container {
+.model-add-container {
   text-align: center;
   max-width: 400px;
   margin: 0 auto;
@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-.brand-add-form {
+.model-add-form {
   display: flex;
   flex-direction: column;
 }

@@ -1,15 +1,13 @@
 import axios from "axios";
+import {Car} from '../../models/car/GetAllCarResponses';
 
 export default class CarService {
-  getAllCars() {
+  static async getCars() {
     return axios.get("http://localhost:8080/api/v1/cars/getAll");
   }
 
-  addCar() {
-    return axios.post("http://localhost:8080/api/v1/cars/add");
+  static async addCar(carData: Car) {
+    return axios.post("http://localhost:8080/api/v1/cars/add", carData);
   }
-
-getDelete(){
-  return axios.delete("http://localhost:8080/api/v1/cars/delete");
-}
+  
 }
