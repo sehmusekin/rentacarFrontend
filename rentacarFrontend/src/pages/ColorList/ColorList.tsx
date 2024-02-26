@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CarService from "../../services/CarService/CarService";
 import { useParams } from "react-router-dom";
-import heroimage2 from "/images/heroImage/heroimage2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
