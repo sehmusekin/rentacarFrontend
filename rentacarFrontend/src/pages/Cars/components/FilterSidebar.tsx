@@ -31,9 +31,7 @@ export default function FilterSidebar() {
       .then((result) => setFuelTypes(result.data.data));
   }, []);
 
-  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSliderValue(parseInt(event.target.value));
-  };
+ 
 
   const handleCategoryClick = (id: number) => {
     navigate(`/category-list/${id}`);
