@@ -1,9 +1,15 @@
 export interface Car {
-  id: number;
-  price: number;
+  kilometer: number;
   year: number;
-  modelName: string;
-  colorName: string;
-  fuelType: string;
-  brandName: string;
+  price: number;
+  gearType: string;
+  plate: string;
+  description: string;
+  numberOfSeats: number;
+  modelId: number;
+  colorId: number;
+  fuelTypeId: number;
+  categoryId: number;
+  brandId: number;
+  available: boolean;
 }

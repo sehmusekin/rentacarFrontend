@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FuelTypeService from "../../services/FuelTypeService/FuelTypeService";
+import "./FuelTypeAdd.css";
 
 export default function FuelTypesAdd() {
   const [fuelTypeData, setFuelTypeData] = useState({

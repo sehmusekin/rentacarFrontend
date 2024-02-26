@@ -1,15 +1,15 @@
 import { useState } from "react";
-import BrandService from "../../services/BrandService/BrandService";
-import "./BrandsAdd.css"; 
+import CategoryService from "../../services/CategoryService/CategoryService";
+import "./CategoriesAdd.css";
 
-export default function BrandsAdd() {
-  const [brandData, setBrandData] = useState({
+export default function ModelsAdd() {
+  const [categoryData, setCategoryData] = useState({
     name: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBrandData({
-      ...brandData,
+    setCategoryData({
+      ...categoryData,
       [e.target.name]: e.target.value,
     });
   };
@@ -18,22 +18,22 @@ export default function BrandsAdd() {
     e.preventDefault();
 
     try {
-      await BrandService.addBrand(brandData);
+      await CategoryService.addCategory(categoryData);
 
-      setBrandData({ name: "" });
+      setCategoryData({ name: "" });
     } catch (error) {
-      console.error("Marka eklenirken bir hata oluştu:", error);
+      console.error("Kategori eklenirken bir hata oluştu:", error);
     }
   };
 
   return (
-    <div className="brand-add-container">
+    <div className="categories-add-container">
       <div className="form-group">
-        <label className="input-label">Marka ekle</label>
+        <label className="input-label">Category</label>
         <input
           type="text"
           name="name"
-          value={brandData.name}
+          value={categoryData.name}
           onChange={handleChange}
         />
       </div>
