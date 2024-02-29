@@ -135,7 +135,7 @@ export default function CarsAdd() {
           }
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+      <button className="button" type="submit" onClick={handleSubmit}>
         Ekle
       </button>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BrandService from "../../services/BrandService/BrandService";
-import "./BrandsAdd.css"; 
+import "./BrandsAdd.css";
 
 export default function BrandsAdd() {
   const [brandData, setBrandData] = useState({
@@ -37,7 +37,7 @@ export default function BrandsAdd() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+      <button className="button" type="submit" onClick={handleSubmit}>
         Ekle
       </button>
     </div>

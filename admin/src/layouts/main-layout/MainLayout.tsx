@@ -4,7 +4,7 @@ import Topbar from "../../components/topbar/Topbar";
 
 const MainLayout = () => {
   return (
-    <div className="flex bg-sky-950">
+    <div className="flex bg-white">
       <Sidebar />
       <div className="flex-grow">
         <Topbar />

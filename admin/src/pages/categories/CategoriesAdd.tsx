@@ -36,8 +36,8 @@ export default function ModelsAdd() {
           value={categoryData.name}
           onChange={handleChange}
         />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
+     </div>
+      <button className="button" type="submit" onClick={handleSubmit}>
         Ekle
       </button>
     </div>

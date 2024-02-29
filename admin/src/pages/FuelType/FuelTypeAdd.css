@@ -38,11 +38,17 @@ input {
   background-color: rgba(137, 123, 123, 0.667);
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
+.button {
+  padding: 10px 20px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
+  color: white;
+  background-color: #aa9ad8;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2f1d52;
+  color: #e0e0e0;
 }

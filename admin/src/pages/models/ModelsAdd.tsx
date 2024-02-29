@@ -46,8 +46,8 @@ export default function ModelsAdd() {
           value={modelsData.brandId}
           onChange={handleChange}
         />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
+       </div>
+      <button className="button" type="submit" onClick={handleSubmit}>
         Ekle
       </button>
     </div>
