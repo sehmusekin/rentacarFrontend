@@ -78,7 +78,7 @@ const Signup = () => {
 
   return (
     <div
-      className="signup-container"
+      className="signup-container mt-16 mb-20"
       style={{ padding: "175px", height: "155vh" }}
     >
       <div>

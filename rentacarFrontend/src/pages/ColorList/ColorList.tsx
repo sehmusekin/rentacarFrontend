@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CarService from "../../services/CarService/CarService";
 import { useParams } from "react-router-dom";
-import heroimage2 from "/images/heroImage/heroimage2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
@@ -46,7 +45,14 @@ export default function CategoryList() {
               <p className="text-gray-400">{car.categoryName}</p>
             </div>
             <div>
-              <img src={heroimage2} width={280} alt="" />
+              {car.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.url}
+                  className="h-40 w-60 object-contain"
+                  alt=""
+                />
+              ))}
             </div>
             <div className="flex justify-around">
               <div className="flex items-center">

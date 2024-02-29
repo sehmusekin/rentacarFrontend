@@ -8,9 +8,7 @@ import { FuelType } from "../../../models/responses/fuelType/GetAllFuelTypeRespo
 import FuelTypeService from "../../../services/FuelTypeService/FuelTypeService";
 
 export default function FilterSidebar() {
-
   const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const [sliderValue, setSliderValue] = useState(50);
   const [categories, setCategories] = useState<Category[]>([]);
   const [colors, setColors] = useState<Color[]>([]);
   const [fuelTypes, setFuelTypes] = useState<FuelType[]>([]);
@@ -31,12 +29,9 @@ export default function FilterSidebar() {
     fuelTypeService
       .getAllFuelTypes()
       .then((result) => setFuelTypes(result.data.data));
-  }
-  , []);
+  }, []);
 
-  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSliderValue(parseInt(event.target.value));
-  };
+ 
 
   const handleCategoryClick = (id: number) => {
     navigate(`/category-list/${id}`);
@@ -133,22 +128,7 @@ export default function FilterSidebar() {
               </label>
             </div>
           ))}
-          <label/>
-        </div>
-        <div className="flex flex-col mt-5 md:mt-5">
-          <h3 className=" text-xs text-gray-400 tracking-wider">PRICE</h3>
-
-          <label className=" flex flex-col">
-            <input
-              type="range"
-              min="90"
-              max="600"
-              value={sliderValue}
-              onChange={handleSliderChange}
-              className="my-2"
-            />
-            <p className="text-sm">PRICE {sliderValue}$</p>
-          </label>
+          <label />
         </div>
       </div>
     </div>
