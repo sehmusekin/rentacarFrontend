@@ -12,13 +12,15 @@ export default function Register() {
     gsm: "",
     username: "",
     password: "",
-    authorities: [],
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
     setRegisterData({
       ...register,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -35,7 +37,6 @@ export default function Register() {
         gsm: "",
         username: "",
         password: "",
-        authorities: [],
       });
     } catch (error: any) {
       console.error("Personel eklenirken bir hata oluştu:", error);
@@ -87,13 +88,6 @@ export default function Register() {
           value={register.password}
           onChange={handleChange}
         />
-        {/* <label className="input-label">Rol</label>
-        <input
-          type="text"
-          name="authorities"
-          value={register.authorities}
-          onChange={handleChange}
-        /> */}
       </div>
       <button className="button" type="submit" onClick={handleSubmit}>
         Ekle
