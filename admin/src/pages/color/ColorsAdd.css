@@ -1,4 +1,4 @@
-.fuelType-add-container {
+.color-add-container {
   text-align: center;
   max-width: 400px;
   margin: 0 auto;
@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-.fuelType-add-form {
+.color-add-form {
   display: flex;
   flex-direction: column;
 }
