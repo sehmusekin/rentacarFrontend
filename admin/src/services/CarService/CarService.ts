@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Car} from '../../models/car/GetAllCarResponses';
+import {Car} from '../../models/car/CarAddModel';
 
 export default class CarService {
   static async getCars() {

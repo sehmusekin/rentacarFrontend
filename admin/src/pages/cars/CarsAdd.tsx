@@ -1,7 +1,8 @@
 import { useState } from "react";
 import CarService from "../../services/CarService/CarService";
 import "./CarsAdd.css";
-import { Car } from "../../models/car/GetAllCarResponses";
+import { Car } from "../../models/car/CarAddModel";
+import { AxiosError } from "axios";
 
 export default function CarsAdd() {
   const [carData, setCarData] = useState<Car>({
@@ -48,8 +49,9 @@ export default function CarsAdd() {
         brandId: 0,
         available: true,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Araç eklenirken bir hata oluştu:", error);
+      console.log("Error details:", (error as AxiosError)?.response?.data);
     }
   };
   return (
@@ -74,6 +76,13 @@ export default function CarsAdd() {
           type="number"
           name="fuelTypeId"
           value={carData.fuelTypeId}
+          onChange={handleChange}
+        />
+        <label className="input-label">Color ID</label>
+        <input
+          type="number"
+          name="colorId"
+          value={carData.colorId}
           onChange={handleChange}
         />
         <label className="input-label">Model ID</label>
@@ -104,6 +113,13 @@ export default function CarsAdd() {
           value={carData.price}
           onChange={handleChange}
         />
+        <label className="input-label">Koltuk Sayısı</label>
+        <input
+          type="number"
+          name="numberOfSeats"
+          value={carData.numberOfSeats}
+          onChange={handleChange}
+        />
         <label className="input-label">Vites Tipi</label>
         <input
           type="text"
@@ -111,6 +127,7 @@ export default function CarsAdd() {
           value={carData.gearType}
           onChange={handleChange}
         />
+
         <label className="input-label">Plaka</label>
         <input
           type="text"

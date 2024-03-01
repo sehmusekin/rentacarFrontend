@@ -1,6 +1,4 @@
-// CarList.jsx
 import React from "react";
-import { Car } from "../../models/car/GetAllCarResponses";
 import {
   faCalendarDays,
   faDroplet,
@@ -8,9 +6,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { CarResponses } from "../../models/car/CarResponses";
 
 interface CarListProps {
-  car: Car;
+  car: CarResponses;
 }
 
 const CarList: React.FC<CarListProps> = ({ car }) => {
@@ -27,7 +26,6 @@ const CarList: React.FC<CarListProps> = ({ car }) => {
       alert("Araba silinirken bir hata oluştu. Konsolu kontrol edin.");
     }
   };
-
 
   return (
     <div className="border p-2 mb-5 rounded-lg ">
@@ -58,7 +56,7 @@ const CarList: React.FC<CarListProps> = ({ car }) => {
           onClick={handleDelete}
           className=" ml-auto px-2 py-1 rounded-lg border-2 border-red-700 hover:bg-red-700 duration-300"
         >
-          Delete
+          Sil
         </button>
       </div>
     </div>
