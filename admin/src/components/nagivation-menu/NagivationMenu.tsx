@@ -87,7 +87,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Personel Ekle</h3>
       </NavLink>
       <NavLink
-        to="/personals-update"
+        to="/personals-list"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
       >
         <div>

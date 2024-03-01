@@ -11,6 +11,7 @@ import BrandsAdd from "./pages/brands/BrandsAdd.tsx";
 import FuelTypesAdd from "./pages/FuelType/FuelTypesAdd.tsx";
 import ModelsAdd from "./pages/models/ModelsAdd.tsx";
 import CategoriesAdd from "./pages/categories/CategoriesAdd.tsx";
+import Register from "./pages/register/Register.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -51,6 +52,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "/categories-add",
               element: <CategoriesAdd />,
+            },
+            {
+              path: "/personals-add",
+              element: <Register />,
             },
           ],
         },
