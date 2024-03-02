@@ -15,7 +15,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Anasayfa</h3>
       </NavLink>
 
-      // CATEGORİES
+       {/* CATEGORİES */}
 
       <NavLink
         to="/categories-add"
@@ -36,7 +36,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Kategorileri Listele</h3>
       </NavLink>
 
-      // BRANDS
+      {/* BRANDS */}
 
       <NavLink
         to="/brand-add"
@@ -48,7 +48,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Araç Markası Ekle</h3>
       </NavLink>
 
-      // MODELS
+       {/* MODELS */}
 
       <NavLink
         to="/model-add"
@@ -60,7 +60,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Model Ekle</h3>
       </NavLink>
 
-      // FUEL TYPES
+       {/* FUEL TYPES */}
 
       <NavLink
         to="/fuel-type-add"
@@ -72,7 +72,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Yakıt Tipi Ekle</h3>
       </NavLink>
 
-      // COLORS
+       {/* COLORS */}
 
       <NavLink
         to="/color-add"
@@ -84,7 +84,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Renk Ekle</h3>
       </NavLink>
 
-      // CARS
+       {/* CARS */}
 
       <NavLink
         to="/cars"
@@ -114,7 +114,7 @@ const NagivationMenu = () => {
         <h3 className="text-lg">Araç Ekle</h3>
       </NavLink>
 
-      // PERSONALS
+       {/* PERSONALS */}
       
       <NavLink
         to="/personals-add"
