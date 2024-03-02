@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   faCalendarDays,
   faDroplet,
@@ -19,25 +19,29 @@ const CarList: React.FC<CarListProps> = ({ car }) => {
       alert("Araba başarıyla silindi");
     } catch (error) {
       console.error("Araba silinirken bir hata oluştu: ", error);
-  
+
       if ((error as any).response) {
-        
         console.error("Server Response Data:", (error as any).response.data);
-        console.error("Server Response Status:", (error as any).response.status);
-        console.error("Server Response Headers:", (error as any).response.headers);
+        console.error(
+          "Server Response Status:",
+          (error as any).response.status
+        );
+        console.error(
+          "Server Response Headers:",
+          (error as any).response.headers
+        );
       } else if ((error as any).request) {
-        // The request was made but no response was received
-        console.error("No response received. Request details:", (error as any).request);
+        console.error(
+          "No response received. Request details:",
+          (error as any).request
+        );
       } else {
-        // Something happened in setting up the request that triggered an Error
         console.error("Error setting up the request:", (error as any).message);
       }
 
       alert("Araba silinirken bir hata oluştu.");
     }
   };
-  
-  
 
   return (
     <div className="border p-2 mb-5 rounded-lg ">

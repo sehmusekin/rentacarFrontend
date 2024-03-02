@@ -14,15 +14,9 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Anasayfa</h3>
       </NavLink>
-      <NavLink
-        to="/categories-list"
-        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
-      >
-        <div>
-          <RiTaskLine className="w-6 h-6" />
-        </div>
-        <h3 className="text-lg">Kategori Listeleme</h3>
-      </NavLink>
+
+      // CATEGORİES
+
       <NavLink
         to="/categories-add"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
@@ -32,6 +26,17 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Kategori Ekle</h3>
       </NavLink>
+      <NavLink
+        to="/categories-list"
+        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Kategorileri Listele</h3>
+      </NavLink>
+
+      // BRANDS
 
       <NavLink
         to="/brand-add"
@@ -42,6 +47,9 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Araç Markası Ekle</h3>
       </NavLink>
+
+      // MODELS
+
       <NavLink
         to="/model-add"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
@@ -51,6 +59,9 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Model Ekle</h3>
       </NavLink>
+
+      // FUEL TYPES
+
       <NavLink
         to="/fuel-type-add"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
@@ -60,6 +71,21 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Yakıt Tipi Ekle</h3>
       </NavLink>
+
+      // COLORS
+
+      <NavLink
+        to="/color-add"
+        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Renk Ekle</h3>
+      </NavLink>
+
+      // CARS
+
       <NavLink
         to="/cars"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
@@ -87,6 +113,9 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Araç Ekle</h3>
       </NavLink>
+
+      // PERSONALS
+      
       <NavLink
         to="/personals-add"
         className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
@@ -104,15 +133,6 @@ const NagivationMenu = () => {
           <RiTaskLine className="w-6 h-6" />
         </div>
         <h3 className="text-lg">Personelleri Listele</h3>
-      </NavLink>
-      <NavLink
-        to="/color-add"
-        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
-      >
-        <div>
-          <RiTaskLine className="w-6 h-6" />
-        </div>
-        <h3 className="text-lg">Renk Ekleme</h3>
       </NavLink>
     </nav>
   );

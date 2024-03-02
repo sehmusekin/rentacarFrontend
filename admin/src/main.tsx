@@ -42,6 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               path: "/brand-add",
               element: <BrandsAdd />,
             },
+
             {
               path: "/fuel-type-add",
               element: <FuelTypesAdd />,

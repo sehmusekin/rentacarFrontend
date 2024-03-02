@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ColorsService from "../../services/ColorService/ColorSerivce";
-//import "./ColorsAdd.css";
+import "./ColorsAdd.css";
 
 export default function ColorAdd() {
   const [colorData, setColorData] = useState({
