@@ -9,13 +9,13 @@ interface ImageAddProps {
 
 interface ImageAddState {
   file: File | null;
-  inputCarId: number; // Yeni state
+  inputCarId: number; 
 }
 
 const ImageAdd: React.FC<ImageAddProps> = ({ carId = 0 }) => {
   const [imageData, setImageData] = useState<ImageAddState>({
     file: null,
-    inputCarId: carId || 0, // carId varsa, kullanılacak; yoksa 0 olacak
+    inputCarId: carId || 0, 
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ const ImageAdd: React.FC<ImageAddProps> = ({ carId = 0 }) => {
     } else if (e.target.name === "carId") {
       setImageData({
         ...imageData,
-        inputCarId: Number(e.target.value), // inputCarId'yi güncelle
+        inputCarId: Number(e.target.value), 
       });
     }
   };
@@ -40,15 +40,13 @@ const ImageAdd: React.FC<ImageAddProps> = ({ carId = 0 }) => {
         await ImageService.addImage(imageData.file, imageData.inputCarId);
       }
 
-      // Reset the form after a successful submission
       setImageData({
         file: null,
-        inputCarId: carId || 0, // carId varsa, kullanılacak; yoksa 0 olacak
+        inputCarId: carId || 0, 
       });
     } catch (error) {
       console.error("Resim eklenirken bir hata oluştu:", error);
 
-      // Log detailed error information from AxiosError
       if (axios.isAxiosError(error)) {
         console.error("AxiosError details:", error.response?.data);
       }
