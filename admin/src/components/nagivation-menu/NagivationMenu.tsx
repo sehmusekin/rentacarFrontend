@@ -66,7 +66,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Model Listele</h3>
+        <h3 className="text-lg">Modelleri Listele</h3>
       </NavLink>
 
       {/* FUEL TYPES */}
@@ -87,7 +87,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Yakıt Tipi Listele</h3>
+        <h3 className="text-lg">Yakıt Türlerini Listele</h3>
       </NavLink>
 
       {/* COLORS */}
@@ -108,7 +108,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Renk Listele</h3>
+        <h3 className="text-lg">Renkleri Listele</h3>
       </NavLink>
 
       {/* CARS */}
