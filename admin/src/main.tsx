@@ -18,6 +18,7 @@ import ColorList from "./pages/color/ColorsList.tsx";
 import FuelTypeList from "./pages/FuelType/FuelTypeList.tsx";
 import ModelsList from "./pages/models/ModelsLİst.tsx";
 import RegisterList from "./pages/register/RegisterList.tsx";
+import ImageAdd from "./pages/image/ImageAdd.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -86,6 +87,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "personals-list",
               element: <RegisterList />,
+            },
+            {
+              path: "/image-add",
+              element: <ImageAdd />,
             },
           ],
         },
