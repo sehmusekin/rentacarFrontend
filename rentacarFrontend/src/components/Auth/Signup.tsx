@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import "./Signup.css";
 
-type Props = {};
+
 
 interface SignupFormValues {
   nationalityId: string;
