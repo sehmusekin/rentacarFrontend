@@ -15,6 +15,7 @@ import Register from "./pages/register/Register.tsx";
 import ColorsAdd from "./pages/color/ColorsAdd.tsx";
 import CategoriesList from "./pages/categories/CategoriesList.tsx";
 import ColorList from "./pages/color/ColorsList.tsx";
+import FuelTypeList from "./pages/FuelType/FuelTypeList.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -71,6 +72,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "color-list",
               element: <ColorList />,
+            },
+            {
+              path: "fuel-type-list",
+              element: <FuelTypeList />,
             },
           ],
         },

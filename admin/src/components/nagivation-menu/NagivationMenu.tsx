@@ -71,6 +71,15 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Yakıt Tipi Ekle</h3>
       </NavLink>
+      <NavLink
+        to="/fuel-type-list"
+        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Yakıt Tipi Liste</h3>
+      </NavLink>
 
       {/* COLORS */}
 
