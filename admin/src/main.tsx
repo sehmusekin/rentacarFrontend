@@ -14,6 +14,7 @@ import CategoriesAdd from "./pages/categories/CategoriesAdd.tsx";
 import Register from "./pages/register/Register.tsx";
 import ColorsAdd from "./pages/color/ColorsAdd.tsx";
 import CategoriesList from "./pages/categories/CategoriesList.tsx";
+import ColorList from "./pages/color/ColorsList.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -66,6 +67,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "categories-list",
               element: <CategoriesList />,
+            },
+            {
+              path: "color-list",
+              element: <ColorList />,
             },
           ],
         },
