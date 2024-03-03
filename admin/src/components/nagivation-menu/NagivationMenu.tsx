@@ -59,6 +59,15 @@ const NagivationMenu = () => {
         </div>
         <h3 className="text-lg">Model Ekle</h3>
       </NavLink>
+      <NavLink
+        to="/models-list"
+        className="flex items-center gap-4 text-black p-2 rounded-lg hover:text-white hover:bg-sky-300 transition-all transition-duration: 250ms;"
+      >
+        <div>
+          <RiTaskLine className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg">Model Listele</h3>
+      </NavLink>
 
       {/* FUEL TYPES */}
 
@@ -78,7 +87,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Yakıt Tipi Liste</h3>
+        <h3 className="text-lg">Yakıt Tipi Listele</h3>
       </NavLink>
 
       {/* COLORS */}
@@ -99,7 +108,7 @@ const NagivationMenu = () => {
         <div>
           <RiTaskLine className="w-6 h-6" />
         </div>
-        <h3 className="text-lg">Renk Liste</h3>
+        <h3 className="text-lg">Renk Listele</h3>
       </NavLink>
 
       {/* CARS */}

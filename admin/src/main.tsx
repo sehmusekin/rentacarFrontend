@@ -16,6 +16,7 @@ import ColorsAdd from "./pages/color/ColorsAdd.tsx";
 import CategoriesList from "./pages/categories/CategoriesList.tsx";
 import ColorList from "./pages/color/ColorsList.tsx";
 import FuelTypeList from "./pages/FuelType/FuelTypeList.tsx";
+import ModelsList from "./pages/models/ModelsLİst.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -76,6 +77,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             {
               path: "fuel-type-list",
               element: <FuelTypeList />,
+            },
+            {
+              path: "models-list",
+              element: <ModelsList />,
             },
           ],
         },
